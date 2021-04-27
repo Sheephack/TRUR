@@ -1,0 +1,536 @@
+$linkColors: #CA611F;
+$otherColor: #495867;
+$tittleColor: #21191F;
+$backgroundColor: #121212;
+
+@mixin flexbox($direction){
+    display: flex;
+    flex-direction: $direction;
+}
+
+/* BEM blocks: header, main, footer, nBCard ( nB por "not Bootstrap
+para no mezclarse con la card de Bootstrap), contentHeader, nBTable (mismo que con la card, 
+galery y form */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+
+        body{
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: $backgroundColor;
+            height: 100%;
+
+            p{
+                color: $tittleColor;
+                font-size: 1rem;
+            }
+            
+            h3{
+                color: $linkColors;
+                font-size: 1.4rem;
+            }
+            
+            h4{
+                @extend h3;
+                color: $tittleColor;
+            }
+            
+            a{
+                text-decoration: none;
+                color: $linkColors;
+            }
+        }
+}
+
+
+#gridContainer{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 100px auto 250px;
+    grid-template-areas:
+        "head"
+        "main"
+        "foot";
+
+        @media only screen and (min-width: 320px) and (orientation: landscape){
+            display: grid;
+            grid-template-columns: 100vw;
+            grid-template-rows: 100px auto 250px;
+            grid-template-areas:
+                "head"
+                "main"
+                "foot";
+        }
+
+        @media only screen and (min-width: 740px){
+            display: grid;
+            grid-template-columns: 100vw;
+            grid-template-rows: 70px auto 250px;
+            grid-template-areas:
+                "head"
+                "main"
+                "foot";
+        }
+
+        @media only screen and (min-width: 1024px){
+            min-height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 920px 1fr;
+            grid-template-rows: 70px auto 250px;
+            grid-template-areas:
+                "head head head"
+                ". main ."
+                "foot foot foot";
+            }
+        
+            .header{
+                grid-area: head;
+                @include flexbox (column);
+                justify-content: flex-start;
+                border-bottom: 2px ridge $linkColors;
+                background-color: white;
+                position: sticky;
+                top: 0px;
+                z-index: 3;
+
+                @media only screen and (min-width: 740px){
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                }
+
+                @media only screen and (min-width: 1024px){
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                }
+            
+                    &__isologo{
+                        height: 40px;
+
+                        &__logo{
+                            margin: 5px;
+                        }
+                    }
+            
+                    &__tittle{
+                        display: inline-block;
+                        position: relative;
+                        bottom: -5px;
+                        left: 10px;
+                        color: $tittleColor;
+                        font-size: 1.15rem;
+
+                        @media only screen and (min-width: 1024px){
+                            top: 5px;
+                            bottom: 20px;
+                            left: 10px;
+                        }
+                    }
+
+                    .navbar{
+                        background: none;
+                        position: relative;
+                        top: 0;
+                        left: -10px;
+                        @media only screen and (min-width: 1024px){
+                            position: relative;
+                            top: 0;
+                        }
+
+                        .navbar-nav{
+                            display: inline-block;
+
+                            .nav-item{
+                                @extend .navbar-nav;
+                                margin-left: 2px;
+                                padding: 2px;
+                                position: relative;
+                                top: 0;
+
+                                @media only screen and (min-width:1024px){
+                                    margin-left: 10px;
+                                    margin-right: 10px;
+                                    padding: 5px;
+                                }
+                            }
+                        }
+
+                        .dropdown-menu{
+                            position: absolute;
+                        }
+                    }
+            }
+            
+            .main{
+                grid-area: main;
+                background: radial-gradient(circle, rgba(255,255,255,1) 48%, rgba(210,210,210,1) 79%, rgba(149,149,149,1) 98%);
+                overflow: hidden;
+                
+                &__upper{
+                    .main__header{
+                        @include flexbox (row);
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        z-index: 0;
+            
+                        #floatingText{
+                            width: auto;
+                            position: absolute;
+                            z-index: 1;
+            
+                            h2{
+                                text-align: center;
+                                text-shadow: #000 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, $linkColors 0px 0px 20px, $linkColors 0px 0px 30px, $linkColors 0px 0px 40px, $linkColors 0px 0px 50px, $linkColors 0px 0px 75px;
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                }
+
+                &__lower{
+                    display: grid;
+                    grid-template-columns: 100%;
+                    grid-template-rows: 86px auto auto;
+                    grid-template-areas: 
+                        "titulo"
+                        "itemUno"
+                        "itemDos";
+                        
+                    .contentHeader{
+                        grid-area: titulo;
+                        background-color: black;
+                        height: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        top: -4px;
+
+                        &__tittle{
+                            color:$linkColors;
+                            text-align: center;
+                        }
+                    }
+
+                    .nBCard{
+                        @include flexbox (column);
+                        flex-wrap: nowrap;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: 500px;
+                        background-color: none;
+
+                        @media only screen and (min-width: 740px){
+                            flex-flow: row nowrap;
+                            height: 350px;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                        }
+
+                        &--one{
+                            grid-area: itemUno;
+                        }
+
+                        &--two{
+                            grid-area: itemDos;
+                        }
+
+                        &__text{
+                            width: 80%;
+
+                            @media only screen and (min-width: 740px) {
+                                width: 30%;
+                            }
+                        }
+
+                        &__video{
+                            height: 282px;
+                            width: 500px;
+                        }
+                    }
+                
+                    .nBTable{ /*services.html table*/
+                        @include flexbox (column);
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        margin: 25px 0 75px 0;
+
+                        &__container{
+                            width: fit-content;
+
+                            @media only screen and (min-width:1024px){
+                                width: 90%;
+                            }
+
+                            &__borders{
+                                margin-top: 10px;
+                                border-color: $linkColors;
+                                border-radius: 15px;
+                            }
+
+                        }
+                        .serviceList{
+                            list-style-image: url(../images/li_dot.png);
+                        }
+                    }
+
+                    .galery{
+                        width: 100%;
+                        margin: 25px 0 75px 0;
+
+                        &__descriptionText{
+                            text-align: center;
+                            margin-bottom: 50px;
+                        }
+
+                        &__container{
+                            display: grid;
+                            grid-template-columns: 90%;
+                            grid-template-rows: 20% 20% 20% 20%;
+                            grid-template-areas: 
+                                "imagUno"
+                                "imagDos"
+                                "videUno"
+                                "videDos";
+                            width: 100%;
+                            height: 1420px;
+                            justify-content: space-evenly;
+                            align-items: center;
+
+                            @media only screen and (min-width: 320px) and (orientation: landscape){
+                                grid-template-columns: 45% 45%;
+                                grid-template-rows: 45% 45%;
+                                grid-template-areas: 
+                                    "imgOne imgTwo"
+                                    "vidOne vidTwo";
+                                height: 720px;
+                            }
+
+                            @media only screen and (min-width: 740px){
+                                grid-template-columns: 45% 45%;
+                                grid-template-rows: 45% 45%;
+                                grid-template-areas: 
+                                    "imgOne imgTwo"
+                                    "vidOne vidTwo";
+                                width: 100%;
+                                height: 720px;
+                            }
+                                
+                        }
+                        &__item{
+                            @include flexbox(column);
+                            justify-content: space-evenly;
+                            width: 100%;
+                            height: 100%;
+                            transition: transform 330ms ease-in-out;
+                            
+                            &--imgOne{
+                                grid-area: imagUno;
+
+                                @media only screen and (min-width: 320px) and (orientation: landscape){
+                                    grid-area: imgOne;
+                                }
+
+                                @media only screen and (min-width: 740px){
+                                    grid-area: imgOne;
+                                }
+                            }
+        
+                            &--imgTwo{
+                                grid-area: imagDos;
+
+                                @media only screen and (min-width: 320px) and (orientation: landscape){
+                                    grid-area: imgTwo;
+                                }
+                                
+                                @media only screen and (min-width: 740px){
+                                    grid-area: imgTwo;
+                                }
+                            }
+
+                            &--vidOne{
+                                grid-area: videUno;
+
+                                @media only screen and (min-width: 320px) and (orientation: landscape){
+                                    grid-area: vidOne;
+                                }
+
+                                @media only screen and (min-width: 740px){
+                                    grid-area: vidOne;
+                                    
+                                }
+                            }
+
+                            &--vidTwo{
+                                grid-area: videDos;
+
+                                @media only screen and (min-width: 320px) and (orientation: landscape){
+                                    grid-area: vidTwo;
+                                }
+
+                                @media only screen and (min-width: 740px){
+                                    grid-area: vidTwo;
+                                    
+                                }
+                            }
+
+                            &__videoSource{
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            &__description{
+                                padding: 15px;
+                                text-align: center;
+                                background-color: #FFF;
+                            }
+                        }
+                        
+                        &__item:hover{
+                            transform: scale(1.05);
+                            border: 1px solid $linkColors;
+                            z-index: 2;
+                        }
+                        
+                        
+                        
+                    }
+
+                    .aboutUs{
+                        @include flexbox(row);
+                        width: 100%;
+                        justify-content: center;
+
+                        &__container{
+                            width: 80%;
+                            
+                        }
+
+                        &__tittle{
+                            text-align: center;
+                        }
+
+                        &__member{
+                            width: 100%;
+
+                            &__info{
+                                width: auto;
+                                text-align: justify;
+                            }
+                        }
+
+                       &__image{
+                            float: left;
+                            margin: 10px;
+                       } 
+                    }
+
+                    .form{
+                        width: 100%;
+
+                        @media only screen and (min-width: 1024px){
+                            width: 60%;
+                            margin: 25px 20% 45px 20%;
+                        }
+
+                        &__heading{
+                            text-align: center;
+                        }
+
+                        &__container{
+                            @include flexbox(column);
+                            justify-content: center;
+                            align-items: center;
+                            margin-left: 5px;
+                            margin-right: 5px;
+                            margin-bottom: 10px;
+                        }
+
+                        &__inputBlock{
+                            color: $otherColor;
+                        }
+
+                        &__tittle{
+                            text-align: center;
+                            color: $tittleColor;
+                        }
+                        
+                        input:focus{
+                            transform: scale(1.05);
+                        }
+
+                        &-group{
+                            @include flexbox(row);
+                            justify-content: center;
+                        }
+                    }
+
+                    .error{
+                        background-image: url("../images/brokenGlass.png");
+                        background-position: top center;
+                        background-clip: content-box;
+                        width: 100%;
+                        height: 500px;
+
+                        &__message{
+                            padding-left: 3rem;
+                            display: inline-block;
+                            width: 40%;
+                        }
+                    }
+                }
+            }
+            
+            .footer{
+                grid-area: foot;
+                @include flexbox(row);
+                justify-content: space-around;
+                align-items: flex-end;
+                background: rgb(18,18,18);
+                background: linear-gradient(0deg, rgba(18,18,18,1) 72%, rgba(48,48,48,1) 98%, rgba(202,97,31,1) 100%);
+                width: 100%;
+            
+                &__left{
+                    width: 40%;
+                    margin-bottom: 10px;
+                }
+            
+                &__right{
+                    width: 30%;
+                    margin-bottom: 10px;
+                }
+                    &__linkbar{
+                        list-style: none;
+
+                        &__item{
+                            transition: transform 350ms ease-in-out;
+                            color: $linkColors;
+
+                            a{
+                                text-decoration: none;
+                                color: $linkColors;
+                            }
+                        }
+
+                        &__item:hover{
+                            transform: scale(1.02);
+                        }
+                    }
+                    
+            }   
+}
+
+
+
+
+
+

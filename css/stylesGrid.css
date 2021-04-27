@@ -1,0 +1,40 @@
+/*Reseteo de margenes a todo el documento */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#gridContainer{
+    display: grid;
+    grid-template-columns: 200px 920px 200px;
+    grid-template-rows: 200px 1700px 350px;
+    grid-template-areas:
+        "head head head"
+        ". main ."
+        "foot foot foot";
+}
+
+header{
+    grid-area: head;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "logo nav";
+}
+
+header div{
+    grid-area: logo;
+}
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: foot;
+}
