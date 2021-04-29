@@ -23,7 +23,11 @@ html{
 
         body{
             font-family: 'Source Sans Pro', sans-serif;
-            background-color: $backgroundColor;
+            background: linear-gradient(-45deg, $backgroundColor, $tittleColor, #414141, #242424);
+            background-size: 400%, 400%;
+            background-clip: content-box;
+            background-attachment: fixed;
+            animation: gradient 15s ease infinite;
             height: 100%;
 
             p{
@@ -48,6 +52,17 @@ html{
         }
 }
 
+@keyframes gradient{
+    0%{
+        background-position: 0% 50% ;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
 
 #gridContainer{
     display: grid;
@@ -81,12 +96,12 @@ html{
         @media only screen and (min-width: 1024px){
             min-height: 100%;
             display: grid;
-            grid-template-columns: 1fr 920px 1fr;
+            grid-template-columns: auto;
             grid-template-rows: 70px auto 250px;
             grid-template-areas:
-                "head head head"
-                ". main ."
-                "foot foot foot";
+                "head"
+                "main"
+                "foot";
             }
         
             .header{
@@ -170,7 +185,7 @@ html{
             
             .main{
                 grid-area: main;
-                background: radial-gradient(circle, rgba(255,255,255,1) 48%, rgba(210,210,210,1) 79%, rgba(149,149,149,1) 98%);
+                background: none;
                 overflow: hidden;
                 
                 &__upper{
@@ -180,6 +195,11 @@ html{
                         justify-content: center;
                         position: relative;
                         z-index: 0;
+
+                        video{
+                            height: 100%;
+                            width: 100%;
+                        }
             
                         #floatingText{
                             width: auto;

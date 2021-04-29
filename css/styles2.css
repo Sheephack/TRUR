@@ -10,7 +10,11 @@ html {
   scroll-behavior: smooth; }
   html body {
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: #121212;
+    background: linear-gradient(-45deg, #121212, #21191F, #414141, #242424);
+    background-size: 400%, 400%;
+    background-clip: content-box;
+    background-attachment: fixed;
+    animation: gradient 15s ease infinite;
     height: 100%; }
     html body p {
       color: #21191F;
@@ -23,6 +27,14 @@ html {
     html body a {
       text-decoration: none;
       color: #CA611F; }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 
 #gridContainer {
   display: grid;
@@ -45,9 +57,9 @@ html {
     #gridContainer {
       min-height: 100%;
       display: grid;
-      grid-template-columns: 1fr 920px 1fr;
+      grid-template-columns: auto;
       grid-template-rows: 70px auto 250px;
-      grid-template-areas: "head head head" ". main ." "foot foot foot"; } }
+      grid-template-areas: "head" "main" "foot"; } }
   #gridContainer .header {
     grid-area: head;
     display: flex;
@@ -109,7 +121,7 @@ html {
         position: absolute; }
   #gridContainer .main {
     grid-area: main;
-    background: radial-gradient(circle, white 48%, #d2d2d2 79%, #959595 98%);
+    background: none;
     overflow: hidden; }
     #gridContainer .main__upper .main__header {
       display: flex;
@@ -118,6 +130,9 @@ html {
       justify-content: center;
       position: relative;
       z-index: 0; }
+      #gridContainer .main__upper .main__header video {
+        height: 100%;
+        width: 100%; }
       #gridContainer .main__upper .main__header #floatingText {
         width: auto;
         position: absolute;
