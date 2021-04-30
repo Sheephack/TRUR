@@ -10,7 +10,7 @@ html {
   scroll-behavior: smooth; }
   html body {
     font-family: 'Source Sans Pro', sans-serif;
-    background: linear-gradient(-45deg, #121212, #21191F, #414141, #242424);
+    background: linear-gradient(-45deg, #121212, #21191F, #000, #242424);
     background-size: 400%, 400%;
     background-clip: content-box;
     background-attachment: fixed;
@@ -143,33 +143,34 @@ html {
           color: #FFFFFF; }
     #gridContainer .main__lower {
       display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 86px auto auto;
-      grid-template-areas: "titulo" "itemUno" "itemDos"; }
+      grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+      grid-template-rows: 86px 30vh 90vh 90vh;
+      grid-template-areas: "titulo titulo titulo titulo titulo titulo titulo" "heading heading heading heading heading heading heading" "itemUno itemUno itemUno centro espacioUno espacioUno bordeDer" "bordeIzq espacioDos espacioDos centro itemDos itemDos itemDos"; }
       #gridContainer .main__lower .contentHeader {
         grid-area: titulo;
         background-color: black;
-        height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        top: -4px; }
+        position: relative; }
         #gridContainer .main__lower .contentHeader__tittle {
-          color: #CA611F;
+          color: #CA611F 80;
           text-align: center; }
+      #gridContainer .main__lower__heading {
+        grid-area: heading;
+        background-color: #12121280; }
       #gridContainer .main__lower .nBCard {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
-        height: 500px;
-        background-color: none; }
+        height: 90vh;
+        background-color: #CA611F; }
         @media only screen and (min-width: 740px) {
           #gridContainer .main__lower .nBCard {
             flex-flow: row nowrap;
-            height: 350px;
+            height: 90vh;
             margin-top: 10px;
             margin-bottom: 10px; } }
         #gridContainer .main__lower .nBCard--one {
