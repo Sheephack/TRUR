@@ -3,14 +3,26 @@ Sitio web de TRUR, Producciones Audiovisuales
 
 Este sitio Web esta siendo realizado como proyecto Final de Desarrollo Web en CoderHouse, y esta siendo paulatinamente actualizado con una nueva estetica y contenido.
 
-### --Update 1.4 (beta)--
+### --Update 1.5 (beta)--
+Cambios en la versión 1.5:
+
+- Rediseño del footer:
+    - Nuevas grid areas en el footer.
+    - Agregado copyright.
+    - Agregado mapa de ubicación.
+    - Cambio en la ubicación de la barra de links.
+    - Agregado mini-formulario de subscripción de novedades.
+    - Agregado logo y pequeña sección de descripción.
+    - Eliminado degradado del background y reemplazado por fondo solido.
+
+#### --Update 1.4 (beta)--
 Cambios en la versión 1.4:
 
 - Añadida compatibilidad de diseño al resto de las paginas.
 - Añadida nueva animacion de `fade-in` en el tag `main` de todas las paginas para una transición mas fluida.
 - Ajustadas, y mejoradas las imagenes de `main__upper` de cada sección.
 - Ajustado el tamaño de `main__upper` para coincidir con el tamaño de pantallas 1080p.
-- Se agrega link interno en para traslado rapido entre la presentación de la página y el contenido.
+- Se agrega link interno para traslado rapido entre la presentación de la página y el contenido.
 - Arreglada la galeria para ser funcional en el nuevo diseño.
 - Modificado el color del Modal de la galeria.
 - Modificado color y presentación del formulario de contacto.

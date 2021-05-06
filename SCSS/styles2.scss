@@ -52,6 +52,10 @@ html{
                 text-decoration: none;
                 color: $linkColors;
             }
+
+            ul{
+                padding-left: 0;
+            }
         }
 }
 
@@ -89,7 +93,7 @@ html{
             min-height: 100%;
             display: grid;
             grid-template-columns: auto;
-            grid-template-rows: 70px auto 250px;
+            grid-template-rows: 70px auto auto;
             grid-template-areas:
                 "head"
                 "main"
@@ -684,24 +688,78 @@ html{
             
             .footer{
                 grid-area: foot;
-                @include flexbox(row);
-                justify-content: space-around;
-                align-items: flex-end;
-                background: rgb(18,18,18);
-                background: linear-gradient(0deg, rgba(18,18,18,1) 72%, rgba(48,48,48,1) 98%, rgba(202,97,31,1) 100%);
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                grid-template-rows: 75% auto;
+                grid-template-areas: 
+                    "info mapa links subs"
+                    "copy copy copy copy";
+                justify-content: space-evenly;
+                background: $backgroundColor;
                 width: 100%;
-            
-                &__left{
-                    width: 40%;
+                padding-top: 7rem;
+                border-top: $linkColors solid 1px;
+
+                &__titles{
+                    font-size: 1rem;
+                    color: #fff;
+                }
+
+                &__info{
+                    grid-area: info;
+                    margin-left: 3rem;
+
+                    &__logo{
+                        width: 5rem;
+                        height: auto;
+                        padding-bottom: 1rem;
+                    }
+
+                    &__parraf{
+                        padding-top: 0.1rem;
+                        padding-right: 1rem;
+                        color: #fff;
+                    }
+                }
+                &__map{
+                    grid-area: mapa;
+                    @include flexbox(column);
+                    justify-content: space-evenly;
+
+                    &__iframe{
+                        width: 60%;
+                        height: 80%;
+                    }
+
+                }
+
+                &__mid{
+                    grid-area: links;
+                    width: 80%;
                     margin-bottom: 10px;
                 }
             
                 &__right{
-                    width: 30%;
+                    grid-area: subs;
+                    width: 80%;
                     margin-bottom: 10px;
+
+                    .footer__subscription{
+                        
+                        &__form{
+                            @include flexbox(row);
+                        }
+                    }
                 }
                     &__linkbar{
                         list-style: none;
+
+                        &--socialMedia{
+                            @include flexbox(row);
+                            margin-top: 1rem;
+                            justify-content: space-around;
+                            align-items: center;
+                        }
 
                         &__item{
                             transition: transform 350ms ease-in-out;
@@ -714,10 +772,17 @@ html{
                         }
 
                         &__item:hover{
-                            transform: scale(1.02);
+                            transform: scale(1.03);
                         }
                     }
-                    
+
+                &__bottom{
+                    grid-area: copy;
+                    @include flexbox(column);
+                    align-items: center;
+                    justify-content: center;
+                    color: #FFF;
+                }    
             }   
 }
 

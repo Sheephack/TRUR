@@ -66,6 +66,8 @@ html {
     html body a {
       text-decoration: none;
       color: #CA611F; }
+    html body ul {
+      padding-left: 0; }
 
 #gridContainer {
   display: grid;
@@ -89,7 +91,7 @@ html {
       min-height: 100%;
       display: grid;
       grid-template-columns: auto;
-      grid-template-rows: 70px auto 250px;
+      grid-template-rows: 70px auto auto;
       grid-template-areas: "head" "main" "foot"; } }
   #gridContainer .header {
     grid-area: head;
@@ -478,21 +480,56 @@ html {
           width: 40%; }
   #gridContainer .footer {
     grid-area: foot;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 75% auto;
+    grid-template-areas: "info mapa links subs" "copy copy copy copy";
+    justify-content: space-evenly;
     background: #121212;
-    background: linear-gradient(0deg, #121212 72%, #303030 98%, #ca611f 100%);
-    width: 100%; }
-    #gridContainer .footer__left {
-      width: 40%;
+    width: 100%;
+    padding-top: 7rem;
+    border-top: #CA611F solid 1px; }
+    #gridContainer .footer__titles {
+      font-size: 1rem;
+      color: #fff; }
+    #gridContainer .footer__info {
+      grid-area: info;
+      margin-left: 3rem; }
+      #gridContainer .footer__info__logo {
+        width: 5rem;
+        height: auto;
+        padding-bottom: 1rem; }
+      #gridContainer .footer__info__parraf {
+        padding-top: 0.1rem;
+        padding-right: 1rem;
+        color: #fff; }
+    #gridContainer .footer__map {
+      grid-area: mapa;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; }
+      #gridContainer .footer__map__iframe {
+        width: 60%;
+        height: 80%; }
+    #gridContainer .footer__mid {
+      grid-area: links;
+      width: 80%;
       margin-bottom: 10px; }
     #gridContainer .footer__right {
-      width: 30%;
+      grid-area: subs;
+      width: 80%;
       margin-bottom: 10px; }
+      #gridContainer .footer__right .footer__subscription__form {
+        display: flex;
+        flex-direction: row; }
     #gridContainer .footer__linkbar {
       list-style: none; }
+      #gridContainer .footer__linkbar--socialMedia {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1rem;
+        justify-content: space-around;
+        align-items: center; }
       #gridContainer .footer__linkbar__item {
         transition: transform 350ms ease-in-out;
         color: #CA611F; }
@@ -500,4 +537,11 @@ html {
           text-decoration: none;
           color: #CA611F; }
       #gridContainer .footer__linkbar__item:hover {
-        transform: scale(1.02); }
+        transform: scale(1.03); }
+    #gridContainer .footer__bottom {
+      grid-area: copy;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFF; }
