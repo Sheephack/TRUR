@@ -16,10 +16,10 @@
     <div id="gridContainer">
         <header class="header">
             <div class="header__isologo">
-                <a href="index.html"><img class="header__isologo__logo" src="images/trur_logo.png" alt="Logo de TRÜR"></a>
+                <a href="index.html"><img class="header__isologo__logo" src="images/trur_logo--inverted.png" alt="Logo de TRÜR"></a>
                 <h1 class="header__tittle">Producciones Audiovisuales</h1>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light"> <!-- Barra de navegacion de Bootstrap-->
+            <nav class="navbar navbar-expand-lg navbar-dark"> <!-- Barra de navegacion de Bootstrap-->
                 <div class="container-fluid">
                   <div class="navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
@@ -30,13 +30,7 @@
                         <a class="nav-link" href="galery.html">Galería</a>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="aboutus.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Nosotros
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="aboutus.html#memberOne">Matías</a></li>
-                          <li><a class="dropdown-item" href="aboutus.html#memberTwo">Leticia</a></li>
-                        </ul>
+                        <a class="nav-link" href="aboutus.html">Nosotros</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contáctanos</a>
@@ -50,15 +44,21 @@
             <section class="main__upper">
                 <img src="images/header_services.jpg" class="img-fluid" alt="Modelo siendo fotografiada">
             </section>
-            <section class="main__lower"> 
+            <section class="main__lower main__lower--services"> 
                 <div class="contentHeader">
                     <h3 class="contentHeader__tittle">Nuestros servicios</h3>
                 </div>
+                <dir class="main__lower__heading">
+                    <p class="main__lower__heading__parraf">En <span class="bold">TRÜR</span> nos dedicamos a diferentes areas del diseño.</p>
+
+                    <p class="main__lower__heading__parraf--down">Podes conocer más sobre nuestros servicios y tarifas que ofrecemos. Futuros servicios se iran agregando paultinamente.</p>
+                    <a class="btn btn-outline-light" href="#tableLink">Nuestras tarifas</a>
+                </dir>
                 <article class="nBTable">
-                    <div class="nBTable__container">
-                        <p>Si tenés alguna duda con respecto a nuestros servicios, podes ponerte en contacto con nosotros haciendo click <a href="contact.html">acá</a></p>
+                    <div class="nBTable__container" id="tableLink">
+                        <p> <a href="contact.html">acá</a></p>
                         <br><!--Tabla usando content de Bootstrap-->
-                        <table class="table table-striped table-bordered table-hover table-sm nBTable__container__borders" border="1px" cellpadding="5px">
+                        <table class="table table-dark table-striped table-hover table-bordered" border="1px" cellpadding="5px">
                             <thead>
                                 <tr>
                                     <th scope="col">Servicio</th>
@@ -67,7 +67,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="align-middle">
                                     <td>Sesión de fotos</td>
                                     <td>Incluye:
                                         <ul class="serviceList">
@@ -77,14 +77,14 @@
                                             <li>1 revisión</li>
                                         </ul>
                                     </td>
-                                    <td>$1700</td>
+                                    <td>Desde $4000</td>
                                 </tr>
-                                <tr>
+                                <tr class="align-middle">
                                     <td>Edición de video</td>
                                     <td>Sin filmación, con uso de material provisto.</td>
-                                    <td>$2000</td>
+                                    <td>Desde $800/min</td>
                                 </tr>
-                                <tr>
+                                <tr class="align-middle">
                                     <td>Producción de video</td>
                                     <td>Incluye:
                                         <ul class="serviceList">
@@ -95,9 +95,9 @@
                                             <li>Post-producción (opcional)</li>
                                         </ul>
                                     </td>
-                                    <td>$10000</td>
+                                    <td>Desde $10000</td>
                                 </tr>
-                                <tr>
+                                <tr class="align-middle">
                                     <td>Desarrollo Web</td>
                                     <td>Front-end</td>
                                     <td>Próximamente :) <br> (consulta por habilitación del servicio)</td>

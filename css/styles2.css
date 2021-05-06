@@ -1,3 +1,42 @@
+/* Este archivo contiene las animaciones y keyframes */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .leftAnimation {
+    animation: slide-in-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rightAnimation {
+    animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; } }
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
 /* BEM blocks: header, main, footer, nBCard ( nB por "not Bootstrap
 para no mezclarse con la card de Bootstrap), contentHeader, nBTable (mismo que con la card, 
 galery y form */
@@ -27,14 +66,6 @@ html {
     html body a {
       text-decoration: none;
       color: #CA611F; }
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
 
 #gridContainer {
   display: grid;
@@ -122,7 +153,8 @@ html {
   #gridContainer .main {
     grid-area: main;
     background: none;
-    overflow: hidden; }
+    overflow: hidden;
+    animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1); }
     #gridContainer .main__upper .main__header {
       display: flex;
       flex-direction: row;
@@ -249,147 +281,191 @@ html {
             #gridContainer .main__lower .nBCard__video--two video {
               border: 20px solid #CA611F;
               border-radius: 2rem; }
-      #gridContainer .main__lower .nBTable {
-        /*services.html table*/
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin: 25px 0 75px 0; }
-        #gridContainer .main__lower .nBTable__container {
-          width: fit-content; }
-          @media only screen and (min-width: 1024px) {
-            #gridContainer .main__lower .nBTable__container {
-              width: 90%; } }
-          #gridContainer .main__lower .nBTable__container__borders {
-            margin-top: 10px;
-            border-color: #CA611F;
-            border-radius: 15px; }
-        #gridContainer .main__lower .nBTable .serviceList {
-          list-style-image: url(../images/li_dot.png); }
-      #gridContainer .main__lower .galery {
-        width: 100%;
-        margin: 25px 0 75px 0; }
-        #gridContainer .main__lower .galery__descriptionText {
-          text-align: center;
-          margin-bottom: 50px; }
-        #gridContainer .main__lower .galery__container {
-          display: grid;
-          grid-template-columns: 90%;
-          grid-template-rows: 20% 20% 20% 20%;
-          grid-template-areas: "imagUno" "imagDos" "videUno" "videDos";
-          width: 100%;
-          height: 1420px;
-          justify-content: space-evenly;
-          align-items: center; }
-          @media only screen and (min-width: 320px) and (orientation: landscape) {
-            #gridContainer .main__lower .galery__container {
-              grid-template-columns: 45% 45%;
-              grid-template-rows: 45% 45%;
-              grid-template-areas: "imgOne imgTwo" "vidOne vidTwo";
-              height: 720px; } }
-          @media only screen and (min-width: 740px) {
-            #gridContainer .main__lower .galery__container {
-              grid-template-columns: 45% 45%;
-              grid-template-rows: 45% 45%;
-              grid-template-areas: "imgOne imgTwo" "vidOne vidTwo";
-              width: 100%;
-              height: 720px; } }
-        #gridContainer .main__lower .galery__item {
+      #gridContainer .main__lower--services {
+        display: grid;
+        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+        grid-template-rows: 86px 30vh auto auto;
+        grid-template-areas: "titulo   titulo titulo  titulo   titulo  titulo titulo" "heading heading heading heading heading heading heading" ".       tabla   tabla   tabla   tabla    tabla    ." ".       tabla   tabla   tabla   tabla    tabla    ."; }
+        #gridContainer .main__lower--services .nBTable {
+          /*services.html table*/
+          grid-area: tabla;
           display: flex;
           flex-direction: column;
-          justify-content: space-evenly;
-          width: 100%;
-          height: 100%;
-          transition: transform 330ms ease-in-out; }
-          #gridContainer .main__lower .galery__item--imgOne {
-            grid-area: imagUno; }
-            @media only screen and (min-width: 320px) and (orientation: landscape) {
-              #gridContainer .main__lower .galery__item--imgOne {
-                grid-area: imgOne; } }
-            @media only screen and (min-width: 740px) {
-              #gridContainer .main__lower .galery__item--imgOne {
-                grid-area: imgOne; } }
-          #gridContainer .main__lower .galery__item--imgTwo {
-            grid-area: imagDos; }
-            @media only screen and (min-width: 320px) and (orientation: landscape) {
-              #gridContainer .main__lower .galery__item--imgTwo {
-                grid-area: imgTwo; } }
-            @media only screen and (min-width: 740px) {
-              #gridContainer .main__lower .galery__item--imgTwo {
-                grid-area: imgTwo; } }
-          #gridContainer .main__lower .galery__item--vidOne {
-            grid-area: videUno; }
-            @media only screen and (min-width: 320px) and (orientation: landscape) {
-              #gridContainer .main__lower .galery__item--vidOne {
-                grid-area: vidOne; } }
-            @media only screen and (min-width: 740px) {
-              #gridContainer .main__lower .galery__item--vidOne {
-                grid-area: vidOne; } }
-          #gridContainer .main__lower .galery__item--vidTwo {
-            grid-area: videDos; }
-            @media only screen and (min-width: 320px) and (orientation: landscape) {
-              #gridContainer .main__lower .galery__item--vidTwo {
-                grid-area: vidTwo; } }
-            @media only screen and (min-width: 740px) {
-              #gridContainer .main__lower .galery__item--vidTwo {
-                grid-area: vidTwo; } }
-          #gridContainer .main__lower .galery__item__videoSource {
-            width: 100%;
-            height: 100%; }
-          #gridContainer .main__lower .galery__item__description {
-            padding: 15px;
-            text-align: center;
-            background-color: #FFF; }
-        #gridContainer .main__lower .galery__item:hover {
-          transform: scale(1.05);
-          border: 1px solid #CA611F;
-          z-index: 2; }
-      #gridContainer .main__lower .aboutUs {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: center; }
-        #gridContainer .main__lower .aboutUs__container {
-          width: 80%; }
-        #gridContainer .main__lower .aboutUs__tittle {
-          text-align: center; }
-        #gridContainer .main__lower .aboutUs__member {
-          width: 100%; }
-          #gridContainer .main__lower .aboutUs__member__info {
-            width: auto;
-            text-align: justify; }
-        #gridContainer .main__lower .aboutUs__image {
-          float: left;
-          margin: 10px; }
-      #gridContainer .main__lower .form {
-        width: 100%; }
-        @media only screen and (min-width: 1024px) {
-          #gridContainer .main__lower .form {
-            width: 60%;
-            margin: 25px 20% 45px 20%; } }
-        #gridContainer .main__lower .form__heading {
-          text-align: center; }
-        #gridContainer .main__lower .form__container {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
           align-items: center;
-          margin-left: 5px;
-          margin-right: 5px;
-          margin-bottom: 10px; }
-        #gridContainer .main__lower .form__inputBlock {
-          color: #495867; }
-        #gridContainer .main__lower .form__tittle {
-          text-align: center;
-          color: #21191F; }
-        #gridContainer .main__lower .form input:focus {
-          transform: scale(1.05); }
-        #gridContainer .main__lower .form-group {
-          display: flex;
-          flex-direction: row;
-          justify-content: center; }
+          width: 100%;
+          background: #CA611F; }
+          #gridContainer .main__lower--services .nBTable__container {
+            width: fit-content; }
+            @media only screen and (min-width: 1024px) {
+              #gridContainer .main__lower--services .nBTable__container {
+                width: 90%; } }
+            #gridContainer .main__lower--services .nBTable__container__borders {
+              margin-top: 10px;
+              border-color: #CA611F;
+              border-radius: 15px; }
+          #gridContainer .main__lower--services .nBTable .serviceList {
+            list-style-image: url(../images/li_dot.png); }
+      #gridContainer .main__lower--galery {
+        display: grid;
+        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+        grid-template-rows: 86px 30vh auto auto;
+        grid-template-areas: "titulo   titulo titulo  titulo   titulo  titulo titulo" "heading heading heading heading heading heading heading" ".       galeria   galeria   galeria   galeria    galeria    ." ".       galeria   galeria   galeria   galeria    galeria    ."; }
+        #gridContainer .main__lower--galery .galery {
+          grid-area: galeria;
+          width: 100%;
+          height: auto;
+          margin: 25px 0 75px 0; }
+          #gridContainer .main__lower--galery .galery__container {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 20% 20% 20% 20%;
+            grid-template-areas: "imagUno" "imagDos" "videUno" "videDos";
+            width: 100%;
+            height: auto;
+            justify-content: space-evenly;
+            align-items: center; }
+            @media only screen and (min-width: 320px) and (orientation: landscape) {
+              #gridContainer .main__lower--galery .galery__container {
+                grid-template-columns: 45% 45%;
+                grid-template-rows: 45% 45%;
+                grid-template-areas: "imgOne imgTwo" "vidOne vidTwo";
+                height: auto; } }
+            @media only screen and (min-width: 740px) {
+              #gridContainer .main__lower--galery .galery__container {
+                grid-template-columns: 500px 500px;
+                grid-template-rows: 50% 50%;
+                grid-template-areas: "imgOne imgTwo" "vidOne vidTwo";
+                width: 100%;
+                height: 100%; } }
+          #gridContainer .main__lower--galery .galery__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: auto;
+            height: auto;
+            transition: transform 330ms ease-in-out; }
+            #gridContainer .main__lower--galery .galery__item--imgOne {
+              grid-area: imagUno; }
+              @media only screen and (min-width: 320px) and (orientation: landscape) {
+                #gridContainer .main__lower--galery .galery__item--imgOne {
+                  grid-area: imgOne; } }
+              @media only screen and (min-width: 740px) {
+                #gridContainer .main__lower--galery .galery__item--imgOne {
+                  grid-area: imgOne; } }
+            #gridContainer .main__lower--galery .galery__item--imgTwo {
+              grid-area: imagDos; }
+              @media only screen and (min-width: 320px) and (orientation: landscape) {
+                #gridContainer .main__lower--galery .galery__item--imgTwo {
+                  grid-area: imgTwo; } }
+              @media only screen and (min-width: 740px) {
+                #gridContainer .main__lower--galery .galery__item--imgTwo {
+                  grid-area: imgTwo; } }
+            #gridContainer .main__lower--galery .galery__item--vidOne {
+              grid-area: videUno; }
+              @media only screen and (min-width: 320px) and (orientation: landscape) {
+                #gridContainer .main__lower--galery .galery__item--vidOne {
+                  grid-area: vidOne; } }
+              @media only screen and (min-width: 740px) {
+                #gridContainer .main__lower--galery .galery__item--vidOne {
+                  grid-area: vidOne; } }
+            #gridContainer .main__lower--galery .galery__item--vidTwo {
+              grid-area: videDos; }
+              @media only screen and (min-width: 320px) and (orientation: landscape) {
+                #gridContainer .main__lower--galery .galery__item--vidTwo {
+                  grid-area: vidTwo; } }
+              @media only screen and (min-width: 740px) {
+                #gridContainer .main__lower--galery .galery__item--vidTwo {
+                  grid-area: vidTwo; } }
+            #gridContainer .main__lower--galery .galery__item__videoSource {
+              width: auto;
+              height: 331px; }
+            #gridContainer .main__lower--galery .galery__item__description {
+              padding: 15px;
+              text-align: center;
+              background-color: #CA611F;
+              color: #FFF; }
+          #gridContainer .main__lower--galery .galery__item:hover {
+            transform: scale(1.05);
+            border: 1px solid #CA611F;
+            z-index: 2; }
+      #gridContainer .main__lower--aboutUs {
+        display: grid;
+        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+        grid-template-rows: 86px 30vh auto auto;
+        grid-template-areas: "titulo   titulo titulo  titulo   titulo  titulo titulo" "heading heading heading heading heading heading heading" ".       acercaDe   acercaDe   acercaDe   acercaDe    acercaDe    ." ".       acercaDe   acercaDe   acercaDe   acercaDe    acercaDe    ."; }
+        #gridContainer .main__lower--aboutUs .aboutUs {
+          grid-area: acercaDe;
+          width: 100%;
+          background-color: #CA611F;
+          border-color: #CA611F;
+          border-radius: 0% 0% 10% 10% / 0% 0% 40% 40%; }
+          #gridContainer .main__lower--aboutUs .aboutUs__container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto; }
+          #gridContainer .main__lower--aboutUs .aboutUs__member {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 3rem;
+            margin-bottom: 3rem; }
+            #gridContainer .main__lower--aboutUs .aboutUs__member__info {
+              width: auto;
+              padding-left: 1rem;
+              padding-right: 1rem;
+              text-align: justify;
+              color: #FFF;
+              font-size: 1.1rem; }
+              #gridContainer .main__lower--aboutUs .aboutUs__member__info__name {
+                font-weight: bold;
+                font-size: 1.2rem; }
+              #gridContainer .main__lower--aboutUs .aboutUs__member__info__link {
+                color: #121212; }
+          #gridContainer .main__lower--aboutUs .aboutUs__image {
+            float: left;
+            margin: 10px; }
+      #gridContainer .main__lower--contact {
+        display: grid;
+        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+        grid-template-rows: 86px 30vh auto auto;
+        grid-template-areas: "titulo   titulo titulo  titulo   titulo  titulo titulo" "heading heading heading heading heading heading heading" ".       contacto   contacto   contacto   contacto    contacto    ." ".       contacto   contacto   contacto   contacto    contacto    ."; }
+        #gridContainer .main__lower--contact .form {
+          width: 100%;
+          grid-area: contacto; }
+          @media only screen and (min-width: 1024px) {
+            #gridContainer .main__lower--contact .form {
+              width: 60%;
+              margin: 25px 20% 45px 20%; } }
+          #gridContainer .main__lower--contact .form fieldset .form-floating {
+            margin-top: 4px;
+            margin-bottom: 4px; }
+          #gridContainer .main__lower--contact .form__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-bottom: 10px; }
+          #gridContainer .main__lower--contact .form__inputBlock {
+            color: #495867; }
+          #gridContainer .main__lower--contact .form__tittle {
+            text-align: center;
+            color: #CA611F; }
+          #gridContainer .main__lower--contact .form input:focus {
+            transform: scale(1.05); }
+          #gridContainer .main__lower--contact .form-group {
+            display: flex;
+            flex-direction: row;
+            margin-top: 8px;
+            justify-content: space-evenly;
+            align-items: center; }
       #gridContainer .main__lower .error {
         background-image: url("../images/brokenGlass.png");
         background-position: top center;
@@ -425,27 +501,3 @@ html {
           color: #CA611F; }
       #gridContainer .footer__linkbar__item:hover {
         transform: scale(1.02); }
-
-@media (prefers-reduced-motion: no-preference) {
-  .leftAnimation {
-    animation: slide-in-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; } }
-
-@media (prefers-reduced-motion: no-preference) {
-  .rightAnimation {
-    animation: slide-in-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; } }
-
-@keyframes slide-in-left {
-  0% {
-    transform: translateX(-1000px);
-    opacity: 0; }
-  100% {
-    transform: translateX(0);
-    opacity: 1; } }
-
-@keyframes slide-in-right {
-  0% {
-    transform: translateX(1000px);
-    opacity: 0; }
-  100% {
-    transform: translateX(0);
-    opacity: 1; } }

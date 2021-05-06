@@ -16,27 +16,21 @@
     <div id="gridContainer">
         <header class="header">
             <div class="header__isologo">
-                <a href="index.html"><img class="header__isologo__logo" id="logo" src="images/trur_logo.png" alt="Logo de TRÜR"></a>
+                <a href="index.html"><img class="header__isologo__logo" id="logo" src="images/trur_logo--inverted.png" alt="Logo de TRÜR"></a>
                 <h1 class="header__tittle">Producciones Audiovisuales</h1>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light"> <!-- Barra de navegacion de Bootstrap-->
+            <nav class="navbar navbar-expand-lg navbar-dark"> <!-- Barra de navegacion de Bootstrap-->
                 <div class="container-fluid">
                   <div class="navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="services.html">Servicios</a>
+                        <a class="nav-link" aria-current="page" href="services.html">Servicios</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="galery.html">Galería</a>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="aboutus.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Nosotros
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="aboutus.html#memberOne">Matías</a></li>
-                          <li><a class="dropdown-item" href="aboutus.html#memberTwo">Leticia</a></li>
-                        </ul>
+                        <a class="nav-link active" aria-current="page" href="aboutus.html">Nosotros</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contáctanos</a>
@@ -50,30 +44,33 @@
             <section class="main__upper">
                 <img src="images/header_aboutus.jpg" class="img-fluid" alt="Foto del grupo de trabajo">
             </section>
-            <section class="main__lower"> 
+            <section class="main__lower main__lower--aboutUs"> 
                 <div class="contentHeader">
                     <h3 class="contentHeader__tittle">Quienes somos</h3>
                 </div>
+                <dir class="main__lower__heading">
+                    <p class="main__lower__heading__parraf">En <span class="bold">TRÜR</span> tenemos ideas superadoras todo el tiempo, pero sobretodo, tenemos una misión:</p>
+
+                    <p class="main__lower__heading__parraf--down">Crear momentos de inspiración, ajustándose siempre a las necesidades de nuestros clientes.</p>
+                    <a class="btn btn-outline-light" id="aboutUsLink" href="#aboutUsLink">Conocenos</a>
+                </dir>
                 <article class="aboutUs">
                     <div class="aboutUs__container">
-                        <h4 class="aboutUs__tittle">Nuestra misión</h4>
-                        <p id="mission">Crear momentos de inspiración, ajustándose siempre a las necesidades de nuestros clientes.</p>
-                        <h4 class="aboutUs__tittle">Nuestro equipo</h4>
                         <div class="aboutUs__member">
                             <img src="images/member_img1.jpg" class="aboutUs__image img_fluid" alt="Foto de Matias">
-                            <p class="aboutUs__member__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam atque debitis aperiam cum doloremque nostrum, tenetur repudiandae maxime eligendi in quibusdam hic cumque aspernatur! Animi minus nulla accusamus ratione debitis.
+                            <p class="aboutUs__member__info"><span class="aboutUs__member__info__name" id="memberOne">Matias Palladino:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam atque debitis aperiam cum doloremque nostrum, tenetur repudiandae maxime eligendi in quibusdam hic cumque aspernatur! Animi minus nulla accusamus ratione debitis.
                             Rem illum odit illo perspiciatis explicabo aliquam nostrum obcaecati, fugiat facilis, molestias, eius deserunt nobis nihil ipsam autem id! Voluptas tenetur repellendus quisquam temporibus quis error nemo quae repudiandae doloremque.
                             Laudantium possimus, maxime, dolorum modi amet natus vero mollitia, illum veritatis ullam adipisci fuga minus quis iure placeat reiciendis delectus quas fugiat nulla. A atque optio ipsam, aliquam quo ut.
                             Debitis voluptas quam inventore accusamus perferendis quasi architecto eveniet ex ad reprehenderit, modi ea corporis. Fugiat dolorum a harum animi nulla nemo repudiandae veniam, reprehenderit dolore sit excepturi exercitationem qui?
-                            Voluptatem nemo corrupti recusandae magni eius, officia incidunt quia iste perferendis aut. Quasi ipsam vel amet unde, eaque quam, error voluptatem, magnam ad autem illo sapiente quod suscipit! Voluptates, molestiae. Link a <a id="memberOne" href="https://www.linkedin.com/in/matias-palladino-a74a149/">Linkedin</a></p>
+                            Voluptatem nemo corrupti recusandae magni eius, officia incidunt quia iste perferendis aut. Quasi ipsam vel amet unde, eaque quam, error voluptatem, magnam ad autem illo sapiente quod suscipit! Voluptates, molestiae. Link a <a class="aboutUs__member__info__link" href="https://www.linkedin.com/in/matias-palladino-a74a149/">Linkedin</a></p>
                         </div>
                         <div class="aboutUs__member">
                             <img src="images/member_img2.jpg" class="aboutUs__image img_fluid" alt="Foto de Leticia">
-                            <p class="aboutUs__member__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam atque debitis aperiam cum doloremque nostrum, tenetur repudiandae maxime eligendi in quibusdam hic cumque aspernatur! Animi minus nulla accusamus ratione debitis.
+                            <p class="aboutUs__member__info"><span class="aboutUs__member__info__name" id="memberTwo">Leticia Oliva:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam atque debitis aperiam cum doloremque nostrum, tenetur repudiandae maxime eligendi in quibusdam hic cumque aspernatur! Animi minus nulla accusamus ratione debitis.
                                 Rem illum odit illo perspiciatis explicabo aliquam nostrum obcaecati, fugiat facilis, molestias, eius deserunt nobis nihil ipsam autem id! Voluptas tenetur repellendus quisquam temporibus quis error nemo quae repudiandae doloremque.
                                 Laudantium possimus, maxime, dolorum modi amet natus vero mollitia, illum veritatis ullam adipisci fuga minus quis iure placeat reiciendis delectus quas fugiat nulla. A atque optio ipsam, aliquam quo ut.
                                 Debitis voluptas quam inventore accusamus perferendis quasi architecto eveniet ex ad reprehenderit, modi ea corporis. Fugiat dolorum a harum animi nulla nemo repudiandae veniam, reprehenderit dolore sit excepturi exercitationem qui?
-                                Voluptatem nemo corrupti recusandae magni eius, officia incidunt quia iste perferendis aut. Quasi ipsam vel amet unde, eaque quam, error voluptatem, magnam ad autem illo sapiente quod suscipit! Voluptates, molestiae. Link a <a id="memberTwo" href="https://www.linkedin.com">Linkedin</a></p>
+                                Voluptatem nemo corrupti recusandae magni eius, officia incidunt quia iste perferendis aut. Quasi ipsam vel amet unde, eaque quam, error voluptatem, magnam ad autem illo sapiente quod suscipit! Voluptates, molestiae. Link a <a class="aboutUs__member__info__link" href="https://www.linkedin.com">Linkedin</a></p>
                         </div>
                     </div>
                 </article>

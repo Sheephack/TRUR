@@ -4,6 +4,8 @@ $otherColor: #495867;
 $tittleColor: #21191F;
 $backgroundColor: #121212;
 
+@import 'animations.scss';
+
 @mixin flexbox($direction){
     display: flex;
     flex-direction: $direction;
@@ -53,17 +55,6 @@ html{
         }
 }
 
-@keyframes gradient{
-    0%{
-        background-position: 0% 50% ;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
-}
 
 #gridContainer{
     display: grid;
@@ -188,7 +179,8 @@ html{
                 grid-area: main;
                 background: none;
                 overflow: hidden;
-                
+                animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+
                 &__upper{
                     .main__header{
                         @include flexbox (row);
@@ -379,220 +371,298 @@ html{
                         }
                     }
                 
-                    .nBTable{ /*services.html table*/
-                        @include flexbox (column);
-                        align-items: center;
-                        justify-content: center;
-                        width: 100%;
-                        margin: 25px 0 75px 0;
+                    &--services{
+                        display: grid;
+                        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+                        grid-template-rows: 86px 30vh auto auto;
+                        grid-template-areas:
+                            "titulo   titulo titulo  titulo   titulo  titulo titulo"
+                            "heading heading heading heading heading heading heading"
+                            ".       tabla   tabla   tabla   tabla    tabla    ."
+                            ".       tabla   tabla   tabla   tabla    tabla    .";
 
-                        &__container{
-                            width: fit-content;
-
-                            @media only screen and (min-width:1024px){
-                                width: 90%;
-                            }
-
-                            &__borders{
-                                margin-top: 10px;
-                                border-color: $linkColors;
-                                border-radius: 15px;
-                            }
-
-                        }
-                        .serviceList{
-                            list-style-image: url(../images/li_dot.png);
-                        }
-                    }
-
-                    .galery{
-                        width: 100%;
-                        margin: 25px 0 75px 0;
-
-                        &__descriptionText{
-                            text-align: center;
-                            margin-bottom: 50px;
-                        }
-
-                        &__container{
-                            display: grid;
-                            grid-template-columns: 90%;
-                            grid-template-rows: 20% 20% 20% 20%;
-                            grid-template-areas: 
-                                "imagUno"
-                                "imagDos"
-                                "videUno"
-                                "videDos";
-                            width: 100%;
-                            height: 1420px;
-                            justify-content: space-evenly;
+                        .nBTable{ /*services.html table*/
+                            grid-area: tabla;
+                            @include flexbox (column);
                             align-items: center;
-
-                            @media only screen and (min-width: 320px) and (orientation: landscape){
-                                grid-template-columns: 45% 45%;
-                                grid-template-rows: 45% 45%;
-                                grid-template-areas: 
-                                    "imgOne imgTwo"
-                                    "vidOne vidTwo";
-                                height: 720px;
-                            }
-
-                            @media only screen and (min-width: 740px){
-                                grid-template-columns: 45% 45%;
-                                grid-template-rows: 45% 45%;
-                                grid-template-areas: 
-                                    "imgOne imgTwo"
-                                    "vidOne vidTwo";
-                                width: 100%;
-                                height: 720px;
-                            }
-                                
-                        }
-                        &__item{
-                            @include flexbox(column);
-                            justify-content: space-evenly;
                             width: 100%;
-                            height: 100%;
-                            transition: transform 330ms ease-in-out;
-                            
-                            &--imgOne{
-                                grid-area: imagUno;
-
-                                @media only screen and (min-width: 320px) and (orientation: landscape){
-                                    grid-area: imgOne;
+                            background: $linkColors;
+    
+                            &__container{
+                                width: fit-content;
+    
+                                @media only screen and (min-width:1024px){
+                                    width: 90%;
                                 }
-
-                                @media only screen and (min-width: 740px){
-                                    grid-area: imgOne;
+    
+                                &__borders{
+                                    margin-top: 10px;
+                                    border-color: $linkColors;
+                                    border-radius: 15px;
                                 }
+    
                             }
-        
-                            &--imgTwo{
-                                grid-area: imagDos;
-
-                                @media only screen and (min-width: 320px) and (orientation: landscape){
-                                    grid-area: imgTwo;
-                                }
-                                
-                                @media only screen and (min-width: 740px){
-                                    grid-area: imgTwo;
-                                }
-                            }
-
-                            &--vidOne{
-                                grid-area: videUno;
-
-                                @media only screen and (min-width: 320px) and (orientation: landscape){
-                                    grid-area: vidOne;
-                                }
-
-                                @media only screen and (min-width: 740px){
-                                    grid-area: vidOne;
-                                    
-                                }
-                            }
-
-                            &--vidTwo{
-                                grid-area: videDos;
-
-                                @media only screen and (min-width: 320px) and (orientation: landscape){
-                                    grid-area: vidTwo;
-                                }
-
-                                @media only screen and (min-width: 740px){
-                                    grid-area: vidTwo;
-                                    
-                                }
-                            }
-
-                            &__videoSource{
-                                width: 100%;
-                                height: 100%;
-                            }
-
-                            &__description{
-                                padding: 15px;
-                                text-align: center;
-                                background-color: #FFF;
+                            .serviceList{
+                                list-style-image: url(../images/li_dot.png);
                             }
                         }
-                        
-                        &__item:hover{
-                            transform: scale(1.05);
-                            border: 1px solid $linkColors;
-                            z-index: 2;
-                        }
-                        
-                        
-                        
                     }
+                    
 
-                    .aboutUs{
-                        @include flexbox(row);
-                        width: 100%;
-                        justify-content: center;
+                    &--galery{
 
-                        &__container{
-                            width: 80%;
-                            
-                        }
+                        display: grid;
+                        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+                        grid-template-rows: 86px 30vh auto auto;
+                        grid-template-areas:
+                            "titulo   titulo titulo  titulo   titulo  titulo titulo"
+                            "heading heading heading heading heading heading heading"
+                            ".       galeria   galeria   galeria   galeria    galeria    ."
+                            ".       galeria   galeria   galeria   galeria    galeria    .";
 
-                        &__tittle{
-                            text-align: center;
-                        }
-
-                        &__member{
+                        .galery{
+                            grid-area: galeria;
                             width: 100%;
-
-                            &__info{
+                            height: auto;
+                            margin: 25px 0 75px 0;
+    
+                            &__container{
+                                display: grid;
+                                grid-template-columns: auto;
+                                grid-template-rows: 20% 20% 20% 20%;
+                                grid-template-areas: 
+                                    "imagUno"
+                                    "imagDos"
+                                    "videUno"
+                                    "videDos";
+                                width: 100%;
+                                height: auto;
+                                justify-content: space-evenly;
+                                align-items: center;
+    
+                                @media only screen and (min-width: 320px) and (orientation: landscape){
+                                    grid-template-columns: 45% 45%;
+                                    grid-template-rows: 45% 45%;
+                                    grid-template-areas: 
+                                        "imgOne imgTwo"
+                                        "vidOne vidTwo";
+                                    height: auto;
+                                }
+    
+                                @media only screen and (min-width: 740px){
+                                    grid-template-columns: 500px 500px;
+                                    grid-template-rows: 50% 50%;
+                                    grid-template-areas: 
+                                        "imgOne imgTwo"
+                                        "vidOne vidTwo";
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                    
+                            }
+                            &__item{
+                                @include flexbox(column);
+                                justify-content: center;
                                 width: auto;
-                                text-align: justify;
+                                height: auto;
+                                transition: transform 330ms ease-in-out;
+                                
+                                &--imgOne{
+                                    grid-area: imagUno;
+    
+                                    @media only screen and (min-width: 320px) and (orientation: landscape){
+                                        grid-area: imgOne;
+                                    }
+    
+                                    @media only screen and (min-width: 740px){
+                                        grid-area: imgOne;
+
+
+                                    }
+                                }
+            
+                                &--imgTwo{
+                                    grid-area: imagDos;
+    
+                                    @media only screen and (min-width: 320px) and (orientation: landscape){
+                                        grid-area: imgTwo;
+                                    }
+                                    
+                                    @media only screen and (min-width: 740px){
+                                        grid-area: imgTwo;
+                                    }
+                                }
+    
+                                &--vidOne{
+                                    grid-area: videUno;
+    
+                                    @media only screen and (min-width: 320px) and (orientation: landscape){
+                                        grid-area: vidOne;
+                                    }
+    
+                                    @media only screen and (min-width: 740px){
+                                        grid-area: vidOne;
+                                        
+                                    }
+                                }
+    
+                                &--vidTwo{
+                                    grid-area: videDos;
+    
+                                    @media only screen and (min-width: 320px) and (orientation: landscape){
+                                        grid-area: vidTwo;
+                                    }
+    
+                                    @media only screen and (min-width: 740px){
+                                        grid-area: vidTwo;
+                                        
+                                    }
+                                }
+    
+                                &__videoSource{
+                                    width: auto;
+                                    height: 331px;
+                                }
+    
+                                &__description{
+                                    padding: 15px;
+                                    text-align: center;
+                                    background-color: $linkColors;
+                                    color: #FFF;
+                                }
                             }
+                            
+                            &__item:hover{
+                                transform: scale(1.05);
+                                border: 1px solid $linkColors;
+                                z-index: 2;
+                            }
+                            
+                            
+                            
                         }
 
-                       &__image{
-                            float: left;
-                            margin: 10px;
-                       } 
                     }
 
-                    .form{
-                        width: 100%;
+                    &--aboutUs{
 
-                        @media only screen and (min-width: 1024px){
-                            width: 60%;
-                            margin: 25px 20% 45px 20%;
+                        display: grid;
+                        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+                        grid-template-rows: 86px 30vh auto auto;
+                        grid-template-areas:
+                            "titulo   titulo titulo  titulo   titulo  titulo titulo"
+                            "heading heading heading heading heading heading heading"
+                            ".       acercaDe   acercaDe   acercaDe   acercaDe    acercaDe    ."
+                            ".       acercaDe   acercaDe   acercaDe   acercaDe    acercaDe    .";
+
+                        .aboutUs{
+                            grid-area: acercaDe;
+                            width: 100%;
+                            background-color: $linkColors;
+                            border-color: $linkColors;
+                            border-radius: 0% 0% 10% 10% / 0% 0% 40% 40% ;
+    
+                            &__container{
+                                width: 80%;
+                                @include flexbox(column);
+                                justify-content: center;
+                                align-items: center;
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
+    
+                            &__member{
+                                @include flexbox(row);
+                                justify-content: center;
+                                align-items: center;
+                                width: 100%;
+                                margin-top: 3rem;
+                                margin-bottom: 3rem;
+    
+                                &__info{
+                                    width: auto;
+                                    padding-left: 1rem;
+                                    padding-right: 1rem;
+                                    text-align: justify;
+                                    color: #FFF;
+                                    font-size: 1.1rem;
+
+                                    &__name{
+                                        font-weight: bold;
+                                        font-size: 1.2rem;
+                                    }
+
+                                    &__link{
+                                        color: $backgroundColor;
+                                    }
+                                }
+                            }
+    
+                           &__image{
+                                float: left;
+                                margin: 10px;
+                           } 
                         }
 
-                        &__heading{
-                            text-align: center;
-                        }
 
-                        &__container{
-                            @include flexbox(column);
-                            justify-content: center;
-                            align-items: center;
-                            margin-left: 5px;
-                            margin-right: 5px;
-                            margin-bottom: 10px;
-                        }
+                    }
 
-                        &__inputBlock{
-                            color: $otherColor;
-                        }
+                    &--contact{
 
-                        &__tittle{
-                            text-align: center;
-                            color: $tittleColor;
-                        }
-                        
-                        input:focus{
-                            transform: scale(1.05);
-                        }
+                        display: grid;
+                        grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
+                        grid-template-rows: 86px 30vh auto auto;
+                        grid-template-areas:
+                            "titulo   titulo titulo  titulo   titulo  titulo titulo"
+                            "heading heading heading heading heading heading heading"
+                            ".       contacto   contacto   contacto   contacto    contacto    ."
+                            ".       contacto   contacto   contacto   contacto    contacto    .";
 
-                        &-group{
-                            @include flexbox(row);
-                            justify-content: center;
+
+                        .form{
+                            width: 100%;
+                            grid-area: contacto;
+    
+                            @media only screen and (min-width: 1024px){
+                                width: 60%;
+                                margin: 25px 20% 45px 20%;
+                            }
+    
+                            fieldset{
+                                .form-floating{
+                                    margin-top: 4px;
+                                    margin-bottom: 4px;
+                                }
+                            }
+
+                            &__container{
+                                @include flexbox(column);
+                                justify-content: center;
+                                align-items: center;
+                                margin-left: 5px;
+                                margin-right: 5px;
+                                margin-bottom: 10px;
+                            }
+    
+                            &__inputBlock{
+                                color: $otherColor;
+                            }
+    
+                            &__tittle{
+                                text-align: center;
+                                color: $linkColors;
+                            }
+                            
+                            input:focus{
+                                transform: scale(1.05);
+                            }
+    
+                            &-group{
+                                @include flexbox(row);
+                                margin-top: 8px;
+                                justify-content: space-evenly;
+                                align-items: center;
+                            }
                         }
                     }
 
@@ -651,39 +721,6 @@ html{
             }   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .leftAnimation{
-        animation: slide-in-left 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .rightAnimation{
-        animation: slide-in-right 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
-}
-
-@keyframes slide-in-left {
-    0% {
-        transform: translateX(-1000px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-  }
-
-@keyframes slide-in-right {
-    0% {
-        transform: translateX(1000px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-  }
 
 
 

@@ -16,30 +16,25 @@
     <div id="gridContainer">
         <header class="header">
             <div class="header__isologo">
-                <a href="index.html"><img class="header__isologo__logo" src="images/trur_logo.png" alt="Logo de TRÜR"></a>
+                <a href="index.html"><img class="header__isologo__logo" src="images/trur_logo--inverted.png" alt="Logo de TRÜR"></a>
                 <h1 class="header__tittle">Producciones Audiovisuales</h1>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light"> <!-- Barra de navegacion de Bootstrap-->
+            <nav class="navbar navbar-expand-lg navbar-dark"> <!-- Barra de navegacion de Bootstrap-->
                 <div class="container-fluid">
                   <div class="navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="services.html">Servicios</a>
+                        <a class="nav-link" href="services.html">Servicios</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="galery.html">Galería</a>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="aboutus.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Nosotros
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="aboutus.html#memberOne">Matías</a></li>
-                          <li><a class="dropdown-item" href="aboutus.html#memberTwo">Leticia</a></li>
-                        </ul>
+                        <a class="nav-link" href="aboutus.html">Nosotros</a>
+                        
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contáctanos</a>
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contáctanos</a>
                       </li>
                     </ul>
                   </div>
@@ -50,14 +45,18 @@
             <section class="main__upper">
                 <img src="images/header_contact.jpg" class="img-fluid" alt="Mujer posando">
             </section>
-            <section class="main__lower"> 
+            <section class="main__lower main__lower--contact"> 
                 <div class="contentHeader">
                     <h3 class="contentHeader__tittle">¡Contáctanos!</h3>
                 </div>
+                <dir class="main__lower__heading">
+                    <p class="main__lower__heading__parraf">En <span class="bold">TRÜR</span> estamos constantemente en crecimiento y aceptando nuevos proyectos y trabajos.</p>
+
+                    <p class="main__lower__heading__parraf--down">Podes escribirnos cualquier tipo de consulta, incluso sugerir nuevos servicios y contratar nuestros servicios.</p>
+                    <a class="btn btn-outline-light" id="contactLink" href="#contactLink">Escribinos</a>
+                </dir>
                 <article class="form">
                     <div class="form__container">
-                        <p class="form__heading">Podes escribirnos cualquier tipo de consulta, incluso sugerir nuevos servicios.</p>
-                        <br>
                         <form class="form__inputBlock" action="#" method="GET">
                             <fieldset> <!-- se reestructura el formulario para funcionar con estilos de Bootrstrap-->
                                 <legend class="form__tittle">Introduce tus datos y te contactaremos a la brevedad</legend>
@@ -91,9 +90,8 @@
                                     <label for="_inquerie" class="form-label">Escriba su consulta</label>
                                 </div>
                                 <div class="form-group">
-                                    <input id="sendButton" type="submit" value="Envianos tu contacto" class="btn btn-warning">
-                                    <br>
-                                    <input type="reset" value="Empezar de nuevo" class="btn btn-warning"> 
+                                    <input id="sendButton" type="submit" value="Envianos tu contacto" class="btn btn-outline-light">
+                                    <input type="reset" value="Empezar de nuevo" class="btn btn-outline-light"> 
                                 </div>
                             </fieldset>
                         </form>
