@@ -1,10 +1,5 @@
-$linkColors: #CA611F;
-$cardColors: #CA611f80;
-$otherColor: #495867;
-$tittleColor: #21191F;
-$backgroundColor: #121212;
-
 @import 'animations.scss';
+@import 'variables.scss';
 
 @mixin flexbox($direction){
     display: flex;
@@ -63,7 +58,7 @@ html{
 #gridContainer{
     display: grid;
     grid-template-columns: 100vw;
-    grid-template-rows: 100px auto 250px;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
         "head"
         "main"
@@ -72,7 +67,7 @@ html{
         @media only screen and (min-width: 320px) and (orientation: landscape){
             display: grid;
             grid-template-columns: 100vw;
-            grid-template-rows: 100px auto 250px;
+            grid-template-rows: 100px auto auto;
             grid-template-areas:
                 "head"
                 "main"
@@ -82,7 +77,7 @@ html{
         @media only screen and (min-width: 740px){
             display: grid;
             grid-template-columns: 100vw;
-            grid-template-rows: 70px auto 250px;
+            grid-template-rows: 70px auto auto;
             grid-template-areas:
                 "head"
                 "main"
@@ -102,34 +97,9 @@ html{
         
             .header{
                 grid-area: head;
-                @include flexbox (column);
-                justify-content: flex-start;
                 border-bottom: 2px ridge $linkColors;
-                background-color: $backgroundColor;
-                position: sticky;
-                top: 0px;
                 z-index: 3;
 
-                @media only screen and (min-width: 740px){
-                    flex-direction: row;
-                    flex-wrap: nowrap;
-                    justify-content: space-between;
-                }
-
-                @media only screen and (min-width: 1024px){
-                    flex-direction: row;
-                    flex-wrap: nowrap;
-                    justify-content: space-between;
-                }
-            
-                    &__isologo{
-                        height: 40px;
-
-                        &__logo{
-                            margin: 5px;
-                        }
-                    }
-            
                     &__tittle{
                         display: inline-block;
                         position: relative;
@@ -138,44 +108,25 @@ html{
                         color: #FFF;
                         font-size: 1.15rem;
 
-                        @media only screen and (min-width: 1024px){
-                            top: 5px;
-                            bottom: 20px;
-                            left: 10px;
+                        @media only screen and (max-width: $bp-small){
+                            font-size: 1rem;
+                        }
+                        @media only screen and (max-width: $bp-small-2){
+                            font-size: 1rem;
                         }
                     }
 
                     .navbar{
-                        background: none;
-                        position: relative;
-                        top: 0;
-                        left: -10px;
-                        @media only screen and (min-width: 1024px){
-                            position: relative;
-                            top: 0;
+                        background: $backgroundColor;
+                        border-bottom: 2px ridge $linkColors;
+            
+                        &-toggler-icon{
+                            width: 1.3rem;
+                        }
+                        .logo__img{
+                            margin: 1px;
                         }
 
-                        .navbar-nav{
-                            display: inline-block;
-
-                            .nav-item{
-                                @extend .navbar-nav;
-                                margin-left: 2px;
-                                padding: 2px;
-                                position: relative;
-                                top: 0;
-
-                                @media only screen and (min-width:1024px){
-                                    margin-left: 10px;
-                                    margin-right: 10px;
-                                    padding: 5px;
-                                }
-                            }
-                        }
-
-                        .dropdown-menu{
-                            position: absolute;
-                        }
                     }
             }
             
@@ -784,10 +735,11 @@ html{
                     color: #FFF;
                 }    
             }   
+
+
+
+
+
+
+
 }
-
-
-
-
-
-

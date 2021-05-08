@@ -37,6 +37,9 @@
     transform: translateX(0);
     opacity: 1; } }
 
+/* Se guardan variables a utilizar */
+/* Colores */
+/* bp = breakpoint */
 /* BEM blocks: header, main, footer, nBCard ( nB por "not Bootstrap
 para no mezclarse con la card de Bootstrap), contentHeader, nBTable (mismo que con la card, 
 galery y form */
@@ -72,19 +75,19 @@ html {
 #gridContainer {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 100px auto 250px;
+  grid-template-rows: auto auto auto;
   grid-template-areas: "head" "main" "foot"; }
   @media only screen and (min-width: 320px) and (orientation: landscape) {
     #gridContainer {
       display: grid;
       grid-template-columns: 100vw;
-      grid-template-rows: 100px auto 250px;
+      grid-template-rows: 100px auto auto;
       grid-template-areas: "head" "main" "foot"; } }
   @media only screen and (min-width: 740px) {
     #gridContainer {
       display: grid;
       grid-template-columns: 100vw;
-      grid-template-rows: 70px auto 250px;
+      grid-template-rows: 70px auto auto;
       grid-template-areas: "head" "main" "foot"; } }
   @media only screen and (min-width: 1024px) {
     #gridContainer {
@@ -95,28 +98,8 @@ html {
       grid-template-areas: "head" "main" "foot"; } }
   #gridContainer .header {
     grid-area: head;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     border-bottom: 2px ridge #CA611F;
-    background-color: #121212;
-    position: sticky;
-    top: 0px;
     z-index: 3; }
-    @media only screen and (min-width: 740px) {
-      #gridContainer .header {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between; } }
-    @media only screen and (min-width: 1024px) {
-      #gridContainer .header {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between; } }
-    #gridContainer .header__isologo {
-      height: 40px; }
-      #gridContainer .header__isologo__logo {
-        margin: 5px; }
     #gridContainer .header__tittle {
       display: inline-block;
       position: relative;
@@ -124,34 +107,19 @@ html {
       left: 10px;
       color: #FFF;
       font-size: 1.15rem; }
-      @media only screen and (min-width: 1024px) {
+      @media only screen and (max-width: 24em) {
         #gridContainer .header__tittle {
-          top: 5px;
-          bottom: 20px;
-          left: 10px; } }
+          font-size: 1rem; } }
+      @media only screen and (max-width: 29.75em) {
+        #gridContainer .header__tittle {
+          font-size: 1rem; } }
     #gridContainer .header .navbar {
-      background: none;
-      position: relative;
-      top: 0;
-      left: -10px; }
-      @media only screen and (min-width: 1024px) {
-        #gridContainer .header .navbar {
-          position: relative;
-          top: 0; } }
-      #gridContainer .header .navbar .navbar-nav, #gridContainer .header .navbar .navbar-nav .nav-item {
-        display: inline-block; }
-        #gridContainer .header .navbar .navbar-nav .nav-item {
-          margin-left: 2px;
-          padding: 2px;
-          position: relative;
-          top: 0; }
-          @media only screen and (min-width: 1024px) {
-            #gridContainer .header .navbar .navbar-nav .nav-item {
-              margin-left: 10px;
-              margin-right: 10px;
-              padding: 5px; } }
-      #gridContainer .header .navbar .dropdown-menu {
-        position: absolute; }
+      background: #121212;
+      border-bottom: 2px ridge #CA611F; }
+      #gridContainer .header .navbar-toggler-icon {
+        width: 1.3rem; }
+      #gridContainer .header .navbar .logo__img {
+        margin: 1px; }
   #gridContainer .main {
     grid-area: main;
     background: none;
