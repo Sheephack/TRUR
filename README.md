@@ -3,7 +3,16 @@ Sitio web de TRUR, Producciones Audiovisuales
 
 Este sitio Web esta siendo realizado como proyecto Final de Desarrollo Web en CoderHouse, y esta siendo paulatinamente actualizado con una nueva estetica y contenido.
 
-### -- Update 1.6 (beta)--
+### -- Update 1.7 (beta)--
+Cambios en la versión 1.7:
+
+- Se reemplaza el contenedor de grid general por flex.
+- Se trabaja en el responsive del contenedor `footer`
+    - El footer es completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px y 4k y resoluciones intermedias.
+- Se solucionan problemas encontrados en el responsive del header.
+
+
+#### -- Update 1.6 (beta)--
 Cambios en la versión 1.6:
 
 - Se eliminan los archivos `styles.css` y `stylesGrid.css` ya que estaban en desuso de versiones previas del sitio.
@@ -14,7 +23,7 @@ Cambios en la versión 1.6:
 - Se comienza a hacer responsive el sitio.
 - Header restructurado:
     - Se utilizan las capacidades de Bootstrap para hacer responsive el `nav-bar`
-        - El header es completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px y 4k. 
+        - El header es completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px y 4k y resoluciones intermedias.
     - Se integra el logo de TRÜR dentro del `nav-bar`
 
 #### --Update 1.5 (beta)--

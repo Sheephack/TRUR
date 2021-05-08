@@ -56,49 +56,14 @@ html{
 
 
 #gridContainer{
-    display: grid;
-    grid-template-columns: 100vw;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-        "head"
-        "main"
-        "foot";
-
-        @media only screen and (min-width: 320px) and (orientation: landscape){
-            display: grid;
-            grid-template-columns: 100vw;
-            grid-template-rows: 100px auto auto;
-            grid-template-areas:
-                "head"
-                "main"
-                "foot";
-        }
-
-        @media only screen and (min-width: 740px){
-            display: grid;
-            grid-template-columns: 100vw;
-            grid-template-rows: 70px auto auto;
-            grid-template-areas:
-                "head"
-                "main"
-                "foot";
-        }
-
-        @media only screen and (min-width: 1024px){
-            min-height: 100%;
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 70px auto auto;
-            grid-template-areas:
-                "head"
-                "main"
-                "foot";
-            }
+    @include flexbox(column);
         
             .header{
                 grid-area: head;
+                height: 4rem;
                 border-bottom: 2px ridge $linkColors;
                 z-index: 3;
+                overflow: hidden;
 
                     &__tittle{
                         display: inline-block;
@@ -109,10 +74,10 @@ html{
                         font-size: 1.15rem;
 
                         @media only screen and (max-width: $bp-small){
-                            font-size: 1rem;
+                            font-size: 0.5rem;
                         }
                         @media only screen and (max-width: $bp-small-2){
-                            font-size: 1rem;
+                            font-size: 0.8rem;
                         }
                     }
 
@@ -124,6 +89,8 @@ html{
                             width: 1.3rem;
                         }
                         .logo__img{
+                            width: 5rem;
+                            height: auto;
                             margin: 1px;
                         }
 
@@ -132,6 +99,7 @@ html{
             
             .main{
                 grid-area: main;
+                @include flexbox(column);
                 background: none;
                 overflow: hidden;
                 animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
@@ -638,27 +606,46 @@ html{
             }
             
             .footer{
-                grid-area: foot;
-                display: grid;
-                grid-template-columns: 25% 25% 25% 25%;
-                grid-template-rows: 75% auto;
-                grid-template-areas: 
-                    "info mapa links subs"
-                    "copy copy copy copy";
+                @include flexbox(column);
                 justify-content: space-evenly;
+                align-items: center;
                 background: $backgroundColor;
                 width: 100%;
-                padding-top: 7rem;
+                padding-top: 3rem;
                 border-top: $linkColors solid 1px;
+                overflow: hidden;
+
+                @media only screen and (min-width:$bp-med){
+                    grid-area: foot;
+                    display: grid;
+                    grid-template-columns: 25% 25% 25% 25%;
+                    grid-template-rows: 75% auto;
+                    grid-template-areas: 
+                        "info mapa links subs"
+                        "copy copy copy copy";
+                }
 
                 &__titles{
                     font-size: 1rem;
                     color: #fff;
+                    text-align: center;
+                    padding-top: 1rem;
+                    font-weight: bold;
+
+                    @media screen and (min-width:$bp-med){
+                        text-align: left;
+                        padding-top: 0;
+                    }
                 }
 
                 &__info{
                     grid-area: info;
-                    margin-left: 3rem;
+                    text-align: center;
+
+                    @media only screen and (min-width:$bp-med){
+                        text-align: left;
+                        margin-left: 3rem;
+                    }
 
                     &__logo{
                         width: 5rem;
@@ -676,6 +663,11 @@ html{
                     grid-area: mapa;
                     @include flexbox(column);
                     justify-content: space-evenly;
+                    align-items: center;
+
+                    @media only screen and (min-width: $bp-med){
+                        align-items: flex-start;
+                    }
 
                     &__iframe{
                         width: 60%;
@@ -685,9 +677,15 @@ html{
                 }
 
                 &__mid{
-                    grid-area: links;
                     width: 80%;
-                    margin-bottom: 10px;
+                    
+                    @media only screen and (min-width:$bp-med){
+                        grid-area: links;
+                        width: 80%;
+                        margin-bottom: 10px;
+                    }
+
+
                 }
             
                 &__right{
@@ -699,12 +697,31 @@ html{
                         
                         &__form{
                             @include flexbox(row);
+
+                            @media only screen and (min-width:$bp-med){
+                                flex-direction: column;
+                            }
+
+                            @media only screen and (min-width:$bp-xl-2){
+                                flex-direction: row;
+                            }
                         }
                     }
                 }
                     &__linkbar{
                         list-style: none;
 
+                        &--navbar{
+                            @include flexbox(row);
+                            flex-wrap: wrap;
+                            justify-content: space-around;
+                            padding-right: 10px;
+
+                            @media only screen and (min-width: $bp-med){
+                                display: block;
+                                padding-right: 0;
+                            }
+                        }
                         &--socialMedia{
                             @include flexbox(row);
                             margin-top: 1rem;
@@ -733,6 +750,7 @@ html{
                     align-items: center;
                     justify-content: center;
                     color: #FFF;
+                    text-align: center;
                 }    
             }   
 
