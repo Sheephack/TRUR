@@ -3,14 +3,22 @@ Sitio web de TRUR, Producciones Audiovisuales
 
 Este sitio Web esta siendo realizado como proyecto Final de Desarrollo Web en CoderHouse, y esta siendo paulatinamente actualizado con una nueva estetica y contenido.
 
-### -- Update 1.7 (beta)--
+### -- Update 1.8 (RC)
+Cambios en la verión 1.8:
+
+- Se trabaja en el responsive del contenedor `main`
+    - Se realiza adaptación del contenedor de `main__lower` en `index.html`.
+- Todo el sitio es responsive y completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px, 4k y resoluciones intermedias.
+- Se soluciona icono en tab de navegación que no se mostraba en todas las paginas.
+- Se añade al diseño imagenes nuevas en `main__upper` cargadas en demanda en pantallas con resoluciones menores o iguales a 430px.
+
+#### -- Update 1.7 (beta)--
 Cambios en la versión 1.7:
 
 - Se reemplaza el contenedor de grid general por flex.
 - Se trabaja en el responsive del contenedor `footer`
-    - El footer es completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px y 4k y resoluciones intermedias.
-- Se solucionan problemas encontrados en el responsive del header.
-
+    - El footer es completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px, 4k y resoluciones intermedias.
+- Se solucionan problemas encontrados en el responsive del header. 
 
 #### -- Update 1.6 (beta)--
 Cambios en la versión 1.6:
@@ -23,7 +31,7 @@ Cambios en la versión 1.6:
 - Se comienza a hacer responsive el sitio.
 - Header restructurado:
     - Se utilizan las capacidades de Bootstrap para hacer responsive el `nav-bar`
-        - El header es completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px y 4k y resoluciones intermedias.
+        - El header es completamente funcional en resoluciones: 320, 375, 425, 768, 1024, 1440px, 4k y resoluciones intermedias.
     - Se integra el logo de TRÜR dentro del `nav-bar`
 
 #### --Update 1.5 (beta)--
@@ -38,7 +46,7 @@ Cambios en la versión 1.5:
     - Agregado logo y pequeña sección de descripción.
     - Eliminado degradado del background y reemplazado por fondo solido.
 
-#### --Update 1.4 (beta)--
+#### --Update 1.4 (alpha)--
 Cambios en la versión 1.4:
 
 - Añadida compatibilidad de diseño al resto de las paginas.
@@ -56,7 +64,7 @@ Cambios en la versión 1.4:
 - El sitio, sigue SIN ser responsive.
 - Se cambia numeración de versionado.
 
-#### --Update 1.3 (beta)--
+#### --Update 1.3 (pre-alpha)--
 Cambios de la versión 1.3:
 
 - Aplicado nuevo diseño:
@@ -72,9 +80,8 @@ Cambios de la versión 1.3:
         - Uso de Intersection Observer API.
     - Aplicados bordes a `<video>` en `.nBCard`.
     - El sitio ya NO es responsive por el momento.
-    
 
-#### --Update 1.2 (alpha)--
+#### --Update 1.2 (pre-alpha)--
 Cambios de la versión 1.2:
 - Se mejora la estructura del grid general (en proceso).
 - Ajuste de `.contentHeader`, (el contenedor no estaba siendo correctamente visualizado en todos los navegadores, y no tenia la totalidad del alto especificado por `grid-area`)
@@ -82,8 +89,7 @@ Cambios de la versión 1.2:
 - Se agrega `.main__lower__heading` como contenedor para futuro contenido en index.html.
 - Se corrije uno de los colores de la animación de fondo debido al poco contraste.
 
-
-#### --Update 1.1 (alpha)--
+#### --Update 1.1 (pre-alpha)--
 
 Se prepara proyecto para version 2.0. Cambios realizados en estilos e index:
 

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/styles2.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/trurIcon.ico" type="image/x-icon">
     <title>Galería - TRÜR</title>
 </head>
 <body>
@@ -102,7 +103,10 @@
         </header>
         <main class="main">
             <section class="main__upper">
-                <img src="images/header_galery.jpg" class="img-fluid" alt="rostro de modelo">
+                <picture>
+                    <source srcset="images/header_galery--mobile.jpg" media="(max-width: 430px)">
+                    <img src="images/header_galery.jpg" class="img-fluid" alt="rostro de modelo">
+                </picture>
             </section>
             <section class="main__lower main__lower--galery"> 
                 <div class="contentHeader">
@@ -110,7 +114,6 @@
                 </div>
                 <dir class="main__lower__heading">
                     <p class="main__lower__heading__parraf">En <span class="bold">TRÜR</span> nos enorguyese mostrar nuestros proyectos y trabajos con nuestros futuros clientes.</p>
-
                     <p class="main__lower__heading__parraf--down">Acá se muestran ejemplos de nuestros trabajos.</p>
                     <a class="btn btn-outline-light" href="#galeryLink"  id="galeryLink">Mira nuestros proyectos</a>
                 </dir>

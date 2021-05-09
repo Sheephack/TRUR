@@ -113,8 +113,13 @@ html{
                         z-index: 0;
 
                         video{
-                            height: 100%;
-                            width: 100%;
+                            height: 50vh;
+                            
+
+                            @media only screen and (min-width:$bp-large){
+                                height: 100%;
+                                width: 100%;
+                            }
                         }
             
                         #floatingText{
@@ -140,15 +145,31 @@ html{
                 }
 
                 &__lower{
-                    display: grid;
-                    grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
-                    grid-template-rows: 86px 30vh 90vh 90vh;
-                    grid-template-areas: 
-                        "titulo titulo titulo titulo titulo titulo titulo"
-                        "heading heading heading heading heading heading heading"
-                        "itemUno itemUno itemUno centro espacioUno espacioUno bordeDer"
-                        "bordeIzq espacioDos espacioDos centro itemDos itemDos itemDos";
-                        
+                    @include flexbox(column);
+
+                    @media only screen and (min-width:$bp-med){
+                        display: grid;
+                        grid-template-columns: 3% 40% 6% 2% 6% 40% 3%;
+                        grid-template-rows: 86px 30vh 90vh 90vh;
+                        grid-template-areas: 
+                            "titulo titulo titulo titulo titulo titulo titulo"
+                            "heading heading heading heading heading heading heading"
+                            "itemUno itemUno itemUno centro espacioUno espacioUno bordeDer"
+                            "bordeIzq espacioDos espacioDos centro itemDos itemDos itemDos";
+                            
+                    }
+
+                    @media only screen and (min-width:$bp-med-2){
+                        display: grid;
+                        grid-template-columns: 3% 46% 2% 46% 3%;
+                        grid-template-rows: 86px 30vh 90vh 90vh;
+                        grid-template-areas: 
+                            "titulo titulo titulo titulo titulo"
+                            "heading heading heading heading heading"
+                            "itemUno itemUno centro espacioUno bordeDer"
+                            "bordeIzq espacioDos centro itemDos itemDos";
+                            
+                    }
                     .contentHeader{
                         grid-area: titulo;
                         background-color: black;
@@ -156,6 +177,13 @@ html{
                         align-items: center;
                         justify-content: center;
                         position: relative;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
+                        height: 5.375rem;
+
+                        @media only screen and (max-width: $bp-med){
+                            height: 3rem;
+                        }
 
                         &__tittle{
                             color:$linkColors 80;
@@ -164,21 +192,47 @@ html{
                     }
 
                     &__heading{
-                        grid-area: heading ;
+                        @include flexbox(column);
+                        grid-area: heading;
                         background-color: #12121280;
-                        display: flex;
-                        flex-direction: column;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
                         align-items: center;
-                        justify-content: space-evenly;
+                        height: fit-content;
+                        
 
+                        @media only screen and (min-width:$bp-med){
+                            grid-area: heading ;
+                            background-color: #12121280;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-evenly;    
+                                             
+                        }
+
+                        @media only screen and (min-width:$bp-large){
+                            height: 30vh;
+                        }
                         &__parraf{
-                            color: #FFF;
+                            font-size: 1rem;
+                            color: #fff;
                             text-align: center;
-                            padding: 20px 30% 0 30%;
+
+                            @media only screen and (min-width:$bp-med){
+                                color: #FFF;
+                                text-align: center;
+                                
+                            }
 
                             &--down{
-                                @extend .main__lower__heading__parraf;
-                                padding: 0 30% 0 30%;
+                                padding: 0 10% 0 10%;
+                                color: #fff;
+                                text-align: center;
+                                @media only screen and (min-width:$bp-med){
+                                    font-size: 1rem;
+                                    padding: 0 30% 0 30%;
+                                }
                             }
 
                             .bold{
@@ -199,7 +253,7 @@ html{
                         height: 90vh;
                         background-color: $linkColors;
 
-                        @media only screen and (min-width: 740px){
+                        @media only screen and (min-width: $bp-xl-2){
                             flex-flow: row;
                             height: 90vh;
                             margin-top: 10px;
@@ -209,12 +263,19 @@ html{
 
                         &--one{
                             grid-area: itemUno;
-                            border-radius: 0% 24% 24% 50% / 0% 24% 24% 0% ;
+                            
+
+                            @media only screen and (min-width:$bp-med){
+                                border-radius: 0% 24% 24% 50% / 0% 24% 24% 0% ;
+                            }
                         }
 
                         &--two{
                             grid-area: itemDos;
-                            border-radius: 24% 0% 0% 24% / 24% 24% 24% 24% ;
+
+                            @media only screen and (min-width:$bp-med){
+                                border-radius: 24% 0% 0% 24% / 24% 24% 24% 24% ;
+                            }
                         }
 
                         &__text{
@@ -229,36 +290,58 @@ html{
                                 color: #FFF;
                                 font-weight: bold;
                                 font-size: 2rem;
-                                position: relative;
-                                left: 200px;
+                                position: inherit;
+
+                                @media only screen and (min-width:$bp-xl-2){
+                                    position: relative;
+                                    left: 200px;
+                                }
                             }
 
                             .nBCard__tittle--two{
                                 @extend .nBCard__tittle--one;
-                                left: 350px;
+                                
+                                @media only screen and (min-width:$bp-xl-2){
+                                    left: 350px;
+                                }
                             }
 
                             &__paragraf--one{
                                 text-align: center;
                                 color: #FFF;
                                 font-size: 1.3rem;
-                                position: relative;
-                                left: 200px;
+                                position: inherit;
+                                @media only screen and (min-width:$bp-xl-2) {
+                                    position: relative;
+                                    left: 200px;
+                                    width: 30vw;
+                                }
                             }
 
                             &__paragraf--two{
                                 @extend .nBCard__text__paragraf--one;
                                 left: 350px;
+
+                                @media only screen and (min-width:$bp-xl-2){
+                                    width: 30vw;
+                                }
                             }
 
                             #galeryButton{
-                                position: relative;
-                                left: 200px;
+                                position: inherit;
+                                @media only screen and (min-width:$bp-xl-2){
+                                    position: relative;
+                                    left: 200px;
+                                }
                             }
                             
                             #serviceButton{
-                                position: relative;
-                                left: 350px;
+                                position: inherit;
+
+                                @media only screen and (min-width:$bp-xl-2){
+                                    position: relative;
+                                    left: 350px;
+                                }
                             }
 
                             @media only screen and (min-width: 740px) {
@@ -268,34 +351,73 @@ html{
                         }
 
                         &__video{
-                            height: 282px;
-                            width: 500px;
-                            box-shadow: $linkColors;
+                            width: 100%;
+                            height: auto;
+
+                            @media only screen and (min-width:$bp-xl-2){
+                                height: 282px;
+                                width: 500px;
+                                box-shadow: $linkColors;
+
+                            }
 
                             &--one{
-                                position: relative;
-                                right: -250px;
+                                position: inherit;
+
+                                @media only screen and (min-width:$bp-xl-2){
+                                    position: relative;
+                                    right: -250px;
+                                }
 
                                 video{
-                                    border: 20px solid $linkColors;
-                                    border-radius: 2rem;
+                                    width: 100%;
+                                    border: 10px solid $linkColors;
+                                    @media only screen and (min-width:$bp-xl-2){
+                                        border: 20px solid $linkColors;
+                                        border-radius: 2rem;
+                                        width: auto;
+                                    }
                                 }
                             }
 
                             &--two{
-                                position: relative;
-                                left: -725px;
+                                position: inherit;
 
+                                @media only screen and (min-width:$bp-xl-2){
+                                    position: relative;
+                                    left: -550px;
+                                }
+
+                                @media only screen and (min-width:$bp-xxl){
+                                    left: -625px;
+                                }
+
+                                @media only screen and (min-width:$bp-1044p){
+                                    left: -750px;
+                                }
+                                @media only screen and (min-width:$bp-1080p){
+                                    left: -850px;
+                                }
+                                @media only screen and (min-width:$bp-4k){
+                                    left: -1000px
+                                }
                                 video{
-                                    border: 20px solid $linkColors;
-                                    border-radius: 2rem;
+                                    width: 100%;
+                                    border: 10px solid $linkColors;
+
+                                    @media only screen and (min-width:$bp-xl-2){
+                                        border: 20px solid $linkColors;
+                                        border-radius: 2rem;
+                                        width: auto;
+                                    }
+                                    
                                 }
                             }
                         }
                     }
                 
                     &--services{
-                        display: grid;
+                        display: flex;
                         grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
                         grid-template-rows: 86px 30vh auto auto;
                         grid-template-areas:
@@ -334,7 +456,7 @@ html{
 
                     &--galery{
 
-                        display: grid;
+                        display: flex;
                         grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
                         grid-template-rows: 86px 30vh auto auto;
                         grid-template-areas:
@@ -363,6 +485,9 @@ html{
                                 justify-content: space-evenly;
                                 align-items: center;
     
+                                @media only screen and (max-width:$bp-med){
+                                    @include flexbox(column);
+                                }
                                 @media only screen and (min-width: 320px) and (orientation: landscape){
                                     grid-template-columns: 45% 45%;
                                     grid-template-rows: 45% 45%;
@@ -372,8 +497,8 @@ html{
                                     height: auto;
                                 }
     
-                                @media only screen and (min-width: 740px){
-                                    grid-template-columns: 500px 500px;
+                                @media only screen and (min-width: $bp-med){
+                                    grid-template-columns: auto auto;
                                     grid-template-rows: 50% 50%;
                                     grid-template-areas: 
                                         "imgOne imgTwo"
@@ -389,6 +514,8 @@ html{
                                 width: auto;
                                 height: auto;
                                 transition: transform 330ms ease-in-out;
+                                padding-top: 1rem;
+                                
                                 
                                 &--imgOne{
                                     grid-area: imagUno;
@@ -443,8 +570,24 @@ html{
                                 }
     
                                 &__videoSource{
-                                    width: auto;
+                                    width: 20em;
                                     height: 331px;
+                                    
+                                    @media only screen and (min-width:$bp-small){
+                                        width: $bp-small;
+                                    }
+
+                                    @media only screen and (min-width:$bp-small-2){
+                                        width: $bp-small-2;
+                                    }
+                                    @media only screen and (min-width:$bp-small-3){
+                                        width: $bp-small-3;
+                                    }
+
+                                    @media only screen and (min-width:$bp-med){
+                                        width: auto;
+                                        
+                                    }
                                 }
     
                                 &__description{
@@ -469,7 +612,7 @@ html{
 
                     &--aboutUs{
 
-                        display: grid;
+                        display: flex;
                         grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
                         grid-template-rows: 86px 30vh auto auto;
                         grid-template-areas:
@@ -484,6 +627,10 @@ html{
                             background-color: $linkColors;
                             border-color: $linkColors;
                             border-radius: 0% 0% 10% 10% / 0% 0% 40% 40% ;
+
+                            @media only screen and (max-width:$bp-med){
+                                border-radius: 0;
+                            }
     
                             &__container{
                                 width: 80%;
@@ -501,6 +648,10 @@ html{
                                 width: 100%;
                                 margin-top: 3rem;
                                 margin-bottom: 3rem;
+
+                                @media only screen and (max-width:$bp-med){
+                                    flex-direction: column;
+                                }
     
                                 &__info{
                                     width: auto;
@@ -532,7 +683,7 @@ html{
 
                     &--contact{
 
-                        display: grid;
+                        display: flex;
                         grid-template-columns: 3% 23% 23% 2% 23% 23% 3%;
                         grid-template-rows: 86px 30vh auto auto;
                         grid-template-areas:

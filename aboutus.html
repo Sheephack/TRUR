@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/styles2.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/trurIcon.ico" type="image/x-icon">
     <title>Nosotros - TRÜR</title>
 </head>
 <body>
@@ -34,7 +35,10 @@
         </header>
         <main class="main">
             <section class="main__upper">
-                <img src="images/header_aboutus.jpg" class="img-fluid" alt="Foto del grupo de trabajo">
+                <picture>
+                    <source srcset="images/header_aboutus--mobile.jpg" media="(max-width: 430px)">
+                    <img src="images/header_aboutus.jpg" class="img-fluid" alt="Foto del grupo de trabajo">
+                </picture>
             </section>
             <section class="main__lower main__lower--aboutUs"> 
                 <div class="contentHeader">
@@ -42,7 +46,6 @@
                 </div>
                 <dir class="main__lower__heading">
                     <p class="main__lower__heading__parraf">En <span class="bold">TRÜR</span> tenemos ideas superadoras todo el tiempo, pero sobretodo, tenemos una misión:</p>
-
                     <p class="main__lower__heading__parraf--down">Crear momentos de inspiración, ajustándose siempre a las necesidades de nuestros clientes.</p>
                     <a class="btn btn-outline-light" id="aboutUsLink" href="#aboutUsLink">Conocenos</a>
                 </dir>
