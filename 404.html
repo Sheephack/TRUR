@@ -5,80 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Video, Fotografia, Diseño, Producciones, Indumentaria, Filmaciones, Sesiones, Estudio, Edición, Desarrollo Web, Audiovisual">
-    <meta name="description" content="Formulario de contacto para recibir información y planificar trabajos a realizar">
+    <meta name="description" content="Página de error 404, página no encontrada.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <title>Error 404 - TRÜR</title>
 </head>
 <body>
-    <div id="gridContainer">
+    <div id="container">
         <header class="header">
-            <div class="header__isologo">
-                <a href="index.html"><img class="header__isologo__logo" src="images/trur_logo.png" alt="Logo de TRÜR"></a>
-                <h1 class="header__tittle">Producciones Audiovisuales</h1>
-            </div>
-            <nav class="navbar navbar-expand-lg navbar-light"> <!-- Barra de navegacion de Bootstrap-->
-                <div class="container-fluid">
-                  <div class="navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="services.html">Servicios</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="galery.html">Galería</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="aboutus.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Nosotros
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="aboutus.html#memberOne">Matías</a></li>
-                          <li><a class="dropdown-item" href="aboutus.html#memberTwo">Leticia</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contáctanos</a>
-                      </li>
+          <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/trur_logo--inverted.png" alt="TRÜR Logo" draggable="false" height="40" class="logo__img d-inline-block"/><h1 class="header__tittle">Producciones Audiovisuales</h1></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="services.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutus.html" >Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contáctanos</a></li>
                     </ul>
-                  </div>
                 </div>
-            </nav>
+            </div>
+        </nav>
         </header>
         <main class="main">
             <section class="main__upper">
-                <img src="images/errorImage.jpg" class="img-fluid" alt="Mujer posando">
+              <picture>
+                <source srcset="images/errorImage--mobile.png" media="(max-width: 430px)">
+                <img src="images/errorImage.png" class="img-fluid" alt="Mujer posando">
+              </picture>
             </section>
-            <section class="main__lower"> 
+            <section class="main__lower main__lower--error"> 
                 <div class="contentHeader">
                     <h3 class="contentHeader__tittle">¡OOOPSSS!</h3>
                 </div>
-                <article class="error">
-                    <div>
-                        <p class="error__message">Parece que te encontraste un agujero en la red, o algo se rompio. Podemos ayudarte a volver a navegar en nuestro sitio. Haz click <a href="index.html">aquí</a> para volver.</p>
-                    </div>
-                </article>
+                <dir class="main__lower__heading">
+                  <p class="main__lower__heading__parraf"><span class="bold">Emmmm</span> parece que te encontraste un agujero en la red, o algo se rompió.</p>
+                  <p class="main__lower__heading__parraf--down">Esto puede ser un poco embarazoso, pero bueno, podemos ayudarte a volver a navegar en nuestro sitio. Hace click abajo para volver al inicio.</p>
+                  <a class="btn btn-outline-light" href="index.html">Volvé al inicio</a>
+                </dir>
             </section>
         </main>
         <footer class="footer">
-            <div class="footer__left">
-                <ul class="footer__linkbar">
-                    <li class="footer__linkbar__item"><a href="index.html">Home</a></li>
-                    <li class="footer__linkbar__item"><a href="services.html">Servicios</a></li>
-                    <li class="footer__linkbar__item"><a href="galery.html">Galería</a></li>
-                    <li class="footer__linkbar__item"><a href="aboutus.html">Nosotros</a></li>
-                    <li class="footer__linkbar__item"><a href="contact.html">Contáctanos</a></li>
-                </ul>
+          <div class="footer__info">
+            <img class="footer__info__logo img-fluid" src="images/trur_logo--inverted.png" alt="Logo de Trur">
+            <p class="footer__info__parraf">Emprendimiento de producciones y desarrollos audiovisuales.</p>
+            <p class="footer__info__parraf">Tel: 555-5555</p>
+            <p class="footer__info__parraf">mail: <a href="mailto:matias.palladino@gmail.com">Envíanos un correo</a></p>
+        </div>
+        <div class="footer__map">
+            <h4 class="footer__titles">Dónde estamos?</h4>
+            <iframe class="footer__map__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.966155900705!2d-58.44990335594979!3d-34.59805327431789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0c687ee0b7%3A0x879b67a1fd77fb98!2sVilla%20Crespo%2C%20CABA!5e0!3m2!1ses!2sar!4v1620283397232!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="footer__mid">
+            <h4 class="footer__titles">Links</h4>
+            <ul class="footer__linkbar footer__linkbar--navbar">
+                <li class="footer__linkbar__item"><a href="index.html" aria-current="page">Home</a></li>
+                <li class="footer__linkbar__item"><a href="services.html">Servicios</a></li>
+                <li class="footer__linkbar__item"><a href="gallery.html">Galería</a></li>
+                <li class="footer__linkbar__item"><a href="aboutus.html">Nosotros</a></li>
+                <li class="footer__linkbar__item"><a href="contact.html">Contáctanos</a></li>
+            </ul>
+        </div>
+        <div class="footer__right">
+            <h4 class="footer__titles">Recibí novedades</h4>
+            <div class="footer__subscription">
+                <form class="footer__subscription__form" action="#" method="GET">
+                    <input type="email" id="_mail" placeholder="Escribí tu e-mail" required class="form-control">
+                    <input id="sendButton" type="submit" value="Subscribite" class="btn btn-outline-light">
+                </form>
             </div>
-            <div class="footer__right">
-                <ul class="footer__linkbar">
-                    <li class="footer__linkbar__item"><a href="https://www.facebook.com/trurproducciones" target="_blank"><img src="images/fb_logo.png" alt="Facebook logo"></a></li>
-                    <li class="footer__linkbar__item"><a href="https://www.behance.net/matiaspalladino" target="_blank"><img src="images/bh_logo.png" alt="Behance logo"></a></li>
-                    <li class="footer__linkbar__item"><a href="https://wa.me/55123901608" target="_blank"><img src="images/wa_logo.png" alt="Whatsapp logo"></a></li>
-                    <!-- El link de Whatsapp esta deliveradamente puesto mal para no enviar mensajes a nadie, solo esta por propositos de funcion -->
-                </ul>
-            </div>
+            <ul class="footer__linkbar footer__linkbar--socialMedia">
+                <li class="footer__linkbar__item"><a href="https://www.facebook.com/trurproducciones"><img src="images/fb_logo.png" alt="Facebook logo"></a></li>
+                <li class="footer__linkbar__item"><a href="https://www.behance.net/matiaspalladino"><img src="images/bh_logo.png" alt="Behance logo"></a></li>
+                <li class="footer__linkbar__item"><a href="https://wa.me/55123901608"><img src="images/wa_logo.png" alt="Whatsapp logo"></a></li>
+                <!-- El link de Whatsapp esta deliveradamente puesto mal para no enviar mensajes a nadie, solo esta por propositos de funcion -->
+            </ul>
+        </div>
+        <div class="footer__bottom">
+            <span class="footer__bottom__tittle">TRÜR &copy</span>
+            <small class="footer__bottom__copyright">Copyright 2021 Matias Palladino. Todos los derechos reservados.</small>
+        </div>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

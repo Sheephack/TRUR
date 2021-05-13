@@ -3,7 +3,37 @@ Sitio web de TRUR, Producciones Audiovisuales
 
 Este sitio Web está siendo realizado como proyecto Final de Desarrollo Web en CoderHouse, y está siendo paulatinamente actualizado con una nueva estética y contenido.
 
-### -- Update 1.9 (RC) -- Actualización de contenido.
+## -- Update 2.0 (RELEASE) --
+Versión final del Sitio Web de TRÜR, corresponde a la **última entrega del Proyecto Final** de Desarrollo Web en Coder House.
+
+Cambios en la versión 2.0:
+
+- Se llega a la versión final del sitio Web, próximos updates serán hotfixes de problemas detectados.
+- Se resuelve errores de responsive en la posición Landscape en dispositivos móviles.
+- Se arregla la página 404 y se adapta al diseño actual.
+- Se arregla y modifica `gallery.html`. Se utiliza Fancybox en reemplazo de Modal de Bootstrap.
+    - Se solucionan glitches gráficos en la galería.
+    - Se modifica la animación de `:hover` y se le agrega efecto de saturación.
+    - Se remueve `iframes`, se reemplaza por funcionalidad de Fancybox.
+    - Se renombra `galery.html` a `gallery.html` (solucionado error ortográfico).
+        - Se adaptan links conforme a este cambio.
+- Se resuelven problemas menores gráficos detectados en el cambio de un breakpoint al otro en dispositivos móviles.
+    - Se resuelve problema de ancho de imagen en `main__upper` en resolución 4k.
+- Se re organiza la ubicación de los archivos a fin de mantener una estructura correcta.
+    - Se cambia la disposición de los links conforme a este cambio.
+- Se renombra `styles2.scss` y `styles2.css` a `styles.scss` y `styles.css` siendo estos la versión definitiva de los mismos.
+    - Se hacen cambios en `package.json ` a fin de reflejar este cambio.
+- Se eliminan archivos innecesarios que no están en uso.
+    - Se hace purga de código en `styles.scss` a fin de simplificar la lectura y eliminar datos innecesarios.
+- Se soluciona error de tabulación en los ítems de la tabla en `services.html`.
+- Se soluciona alineación de título en `footer__right`.
+- Se modifican, eliminan o se agregan comentarios para la corrección del trabajo.
+- Se agregan excepciones en `.gitignore`.
+- Se cambia el color del texto y de botones en fondos con color `#CA611f` a color negro.
+    - Se cumple con WCAG 2.0 AA en texto normal, y AAA en texto grande con este cambio.
+    - En función de mantener la coherencia visual entre las páginas, se eliminan los fondos con color `#CA611f` en los lugares donde no es necesario.
+
+#### -- Update 1.9 (RC) -- Actualización de contenido.
 Cambios en la versión 1.9:
 
 - Se trabaja en el reemplazo de Lorem, por el contenido adecuado. Ya no hay contenido placeholder.
